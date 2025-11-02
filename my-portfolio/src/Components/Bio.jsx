@@ -103,7 +103,7 @@ const Bio = () => {
             <img
               src={img1}
               alt="bio-img-1"
-              className="w-full h-auto sm:h-[550px] md:h-[600px] object-cover rounded-sm"
+              className="w-full h-[305px] sm:h-[550px] md:h-[600px] object-cover rounded-sm"
             />
           </div>
 
@@ -115,7 +115,7 @@ const Bio = () => {
             <img
               src={img2}
               alt="bio-img-2"
-              className="w-full h-[305px] sm:h-[550px] md:h-[600px] object-cover object-[center_10%] rounded-sm"
+              className="w-full h-[300px] sm:h-[550px] md:h-[600px] object-cover object-[center_10%] rounded-sm"
             />
           </div>
         </div>
