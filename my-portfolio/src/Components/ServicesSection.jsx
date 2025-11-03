@@ -1,110 +1,136 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-// ✅ Make sure these files exist in /public and are renamed safely (no brackets/spaces)
-const images = ["/solo.png", "/multi.jpg", "/mozart1.jpg"];
+const images = ["/solo.png", "/multi.jpg", "/cam.webp"];
 
-const ServicesSection = () => {
+const skills = [
+  "Front-end development",
+  "Creative direction",
+  "Responsive UI implementation",
+  "UX-focused design integration",
+  "Interactive prototyping",
+  "Performance optimization",
+  "Animation and motion design",
+];
+
+const Design = () => {
   const [current, setCurrent] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const intervalRef = useRef(null);
 
-  // ✅ Auto-play (clean interval handling)
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % images.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
+    if (!isPaused) {
+      intervalRef.current = setInterval(() => {
+        setCurrent((prev) => (prev + 1) % images.length);
+      }, 5000);
+    }
+    return () => clearInterval(intervalRef.current);
+  }, [isPaused]);
 
   const prev = () => setCurrent((p) => (p - 1 + images.length) % images.length);
   const next = () => setCurrent((p) => (p + 1) % images.length);
 
+  const handleDragEnd = (event, info) => {
+    const swipeThreshold = 50;
+    if (info.offset.x > swipeThreshold) prev();
+    else if (info.offset.x < -swipeThreshold) next();
+    setIsPaused(false);
+  };
+
   return (
-    <section className="bg-[#0d0e0f] text-white border-b border-white px-4 sm:px-5 py-2 sm:py-16 md:py-5 md:pb-44 overflow-hidden side-nudge">
-      <div className="grid md:grid-cols-2 gap-8">
+    <section className="bg-[#0d0e0f] text-white overflow-hidden relative">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-3.5 sm:px-5 lg:px-5 py-6 sm:py-16 lg:py-8">
         {/* Left: Text */}
-        <div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl mb-5 font-serif font-bold flex sm:block justify-between items-center md:-ml-0 ml-1">
+        <div className="flex flex-col justify-start">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif mb-4 tracking-tight font-semibold">
             SERVICES
-            <a
-              href="/services"
-              className="text-sm sm:hidden underline decoration-[1px] font-semibold decoration-white hover:decoration-gray-400 transition whitespace-nowrap"
-            >
-              Discover
-            </a>
           </h2>
-          <p className="text-gray-200 font-semibold leading-relaxed max-w-4xl text-base sm:text-lg md:text-[22px]">
+
+          <p className="leading-relaxed max-w-3xl text-base sm:text-lg md:text-xl lg:text-[27.5px] text-gray-50">
             From strategy & design systems to Development & creative direction,
-            whether <br className="hidden sm:block" /> solo or with trusted
-            teammates, I help brands turn complexity into clarity.
+            whether solo or with trusted teammates, I help brands turn complexity into clarity.
           </p>
+
+          <ul className="space-y-2 sm:space-y-3 mt-6 sm:mt-8 ml-1 sm:ml-0">
+            {skills.map((skill, index) => (
+              <li
+                key={index}
+                className="flex items-center gap-3 text-base sm:text-lg md:text-xl lg:text-[24px] font-semibold"
+              >
+                <span className="w-1.5 h-1.5 bg-white flex-shrink-0"></span>
+                <span>{skill}</span>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        {/* Right: Image + controls */}
-        <div className="flex flex-col items-center mt-10 md:mt-0 sm:-mr-14">
-          {/* Discover link */}
-          <div className="w-full max-w-md flex justify-end md:mr-[-160px] mb-8 sm:mb-10 sm:flex">
-            <a
-              href="/services"
-              className="hidden sm:flex text-base sm:text-lg underline decoration-[1px] font-semibold decoration-white hover:decoration-gray-400 transition"
-            >
-              Discover my services
-            </a>
+        {/* Right: Image + link + controls */}
+        <div className="flex flex-col items-center md:items-end relative">
+          {/* Link above image */}
+          <a
+            href="/services"
+            className="mb-3 sm:mb-4 text-sm sm:text-base font-semibold underline decoration-[1px] decoration-white hover:decoration-gray-400 transition"
+          >
+            Discover my services
+          </a>
+
+          {/* Image slider */}
+          <div
+            className="relative w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl h-56 sm:h-72 md:h-[550px] lg:h-[750px] overflow-hidden shadow-lg rounded-sm"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
+            {images.map((src, i) => (
+              <motion.img
+                key={i}
+                src={src}
+                alt={`Service ${i + 1}`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: i === current ? 1 : 0 }}
+                transition={{ duration: 0.8, ease: "easeInOut" }}
+                className="absolute inset-0 w-full h-full object-cover cursor-grab active:cursor-grabbing"
+                style={{ zIndex: i === current ? 1 : 0 }}
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.4}
+                onDragStart={() => setIsPaused(true)}
+                onDragEnd={handleDragEnd}
+              />
+            ))}
           </div>
 
-          {/* ✅ Image slider */}
-          <div className="relative w-full max-w-sm sm:max-w-md md:max-w-lg h-[350px] sm:h-[450px] md:h-[650px] overflow-hidden shadow-lg md:ml-14 rounded-sm">
-            {images.length > 0 &&
-              images.map((src, i) => (
-                <motion.img
-                  key={i}
-                  src={src}
-                  alt={`Service ${i + 1}`}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: i === current ? 1 : 0 }}
-                  transition={{ duration: 1.0, ease: "easeInOut" }}
-                  className="absolute inset-0 w-full h-full object-cover"
-                  style={{ zIndex: i === current ? 1 : 0 }}
-                  // ✅ Hide broken image instead of crashing
-                  onError={(e) => (e.target.style.display = "none")}
-                />
-              ))}
-          </div>
-
-          {/* Counter + Arrows */}
-          <div className="w-full max-w-sm sm:max-w-xl mt-4 flex items-center justify-between px-2 sm:px-0">
-            <span className="text-xs sm:text-xl text-gray-50 tracking-wide ml-2 sm:ml-8 md:ml-20">
+          {/* Counter + arrows */}
+          <div className="w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl mt-4 flex items-center justify-between">
+            <span className="text-xs sm:text-sm text-gray-400 tracking-wide ml-2 sm:ml-4">
               {current + 1}/{images.length}
             </span>
-            <div className="flex gap-3 sm:gap-4">
+            <div className="flex gap-2 sm:gap-3">
               <button
                 onClick={prev}
-                className="p-1 sm:p-2 hover:text-gray-300 transition"
+                className="p-2 text-gray-400 hover:text-gray-200 transition"
                 aria-label="Previous"
               >
-                <ChevronLeft size={20} />
+                <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
               <button
                 onClick={next}
-                className="p-1 sm:p-2 hover:text-gray-300 transition"
+                className="p-2 text-gray-400 hover:text-gray-200 transition"
                 aria-label="Next"
               >
-                <ChevronRight size={20} />
+                <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
             </div>
           </div>
         </div>
       </div>
+
+      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-white mt-28"></div>
     </section>
   );
 };
 
-export default ServicesSection;
-
-
-
-
-
+export default Design;
 
 
 
