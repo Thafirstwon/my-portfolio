@@ -85,10 +85,10 @@ const MoreNotes = () => {
                     "
                   />
                 </div>
-                <h3 className="text-2xl sm:text-3xl md:text-[33px] font-semibold mt-3 group-hover:underline">
+                <h3 className="text-1xl sm:text-2xl md:text-[33px] font-semibold mt-3 group-hover:underline">
                   {note.title}
                 </h3>
-                <p className="text-lg sm:text-xl md:text-[22px] mt-1">
+                <p className="sm:text-xl md:text-[22px] mt-1">
                   {note.categories}
                 </p>
               </Link>

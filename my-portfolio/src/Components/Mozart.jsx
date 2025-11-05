@@ -23,7 +23,14 @@ const Mozart = () => {
                   <img
                   src={Mozart01}
                   alt='client'
-                  className='w-[510px] h-[538px] object-cover mb-1'
+                  className="max-w-[510px] sm:max-w-[460px] md:max-w-[510px] h-[350px] object-cover mb-1  w-[300px] 
+       
+            sm:w-[350px] 
+            sm:h-[500px] 
+            md:w-[450px] 
+            md:h-[550px] 
+            lg:w-[550px] 
+            lg:h-[650px]"
                   />
                   <div className='w-[88%] mx-auto h-[26px] relative'>
                     <div className='absolute bottom-0 left-0 right-0 border-b border-gray-400'></div>

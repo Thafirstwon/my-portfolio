@@ -30,7 +30,7 @@ const ThreeColumnSection = () => {
               <img
                 src={item.img}
                 alt={item.title}
-                className="w-full h-[550px] sm:h-[500px] md:h-[600px] object-cover rounded-sm shadow-lg group-hover:opacity-90 transition"
+                className="w-full h-[450px] sm:h-[500px] md:h-[600px] object-cover rounded-sm shadow-lg group-hover:opacity-90 transition"
               />
             </a>
           ))}
