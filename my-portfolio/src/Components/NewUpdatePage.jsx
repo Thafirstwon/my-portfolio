@@ -27,7 +27,7 @@ const NewUpdatePage = () => {
             <img
               src={m4}
               alt="New portfolio next chapter"
-              className="max-w-[510px] sm:max-w-[460px] md:max-w-[510px] h-[350px] object-cover mb-1  w-[300px] 
+              className="max-w-[510px] sm:max-w-[460px] md:max-w-[510px] h-[350px] object-cover mb-1  w-[250px] 
        
             sm:w-[350px] 
             sm:h-[500px] 
