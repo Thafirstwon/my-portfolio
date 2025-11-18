@@ -77,7 +77,7 @@ const Navbar = ({
       <nav
         className={`fixed top-0 w-full flex justify-between items-center px-3 sm:px-3 py-4 sm:py-6
           text-base font-semibold z-[400] transition-colors duration-500 overflow-hidden
-          ${navbarStyles.background}`}
+           ${location.pathname === "/contact" ? "bg-[#0d0e0f]" : navbarStyles.background}`}
       >
         {/* Left: Menu Button */}
         <button
@@ -261,7 +261,7 @@ const Navbar = ({
                 <a className="hover:underline" href="https://www.instagram.com/jinad.stefan/" target="_blank" rel="noreferrer">
                   Instagram,
                 </a>
-                <a className="hover:underline" href="#" target="_blank" rel="noreferrer">
+                <a className="hover:underline" href="www.linkedin.com/in/stefan-jinad47" target="_blank" rel="noreferrer">
                   LinkedIn
                 </a>
               </div>

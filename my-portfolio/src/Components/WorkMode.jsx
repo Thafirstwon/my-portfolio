@@ -53,7 +53,7 @@ const WorkMode = () => {
             <p className={`${
                   section.title === "Join the roster"
                   ? "text-xl font-medium"
-                  : "text-base text-[33px] font-medium"
+                  : "ext-base sm:text-lg md:text-[22px] font-medium"
             } leading-relaxed w-full md:w-3/4`}
               dangerouslySetInnerHTML={{ __html: section.description}}>
             </p>

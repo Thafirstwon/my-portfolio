@@ -47,7 +47,7 @@ const Design = () => {
             SERVICES
           </h2>
 
-          <p className="leading-relaxed max-w-3xl text-base sm:text-lg md:text-xl lg:text-[27.5px] text-gray-50">
+          <p className="leading-normal max-w-3xl text-base sm:text-lg md:text-sm lg:text-[20.5px]">
             From strategy & design systems to Development & creative direction,
             whether solo or with trusted teammates, I help brands turn complexity into clarity.
           </p>

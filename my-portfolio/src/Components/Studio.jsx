@@ -11,7 +11,7 @@ const Studio = () => {
       {/* Top border */}
       
 
-      <div className="max-w-7x px-4 sm:px-6 lg:px-6 py-8 md:py-9">
+      <div className="px-4 sm:px-6 lg:px-6 py-8 md:py-9">
         {/* === Title & Description === */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 items-start mb-10 md:mb-16">
 

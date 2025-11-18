@@ -69,14 +69,14 @@ export default function Footer() {
               Instagram
             </a>
             ,{" "}
-            <a href="#" className="hover:underline">
+            <a href="www.linkedin.com/in/stefan-jinad47" className="hover:underline">
               LinkedIn
             </a>
           </div>
         </div>
 
         {/* Copyright */}
-        <p className="text-center md:text-right">© 2023 — 2025 ThaGreat</p>
+        <p className="text-center md:text-right">© 2025 ThaGreat</p>
       </div>
     </motion.footer>
   );

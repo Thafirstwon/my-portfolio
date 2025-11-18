@@ -50,7 +50,7 @@ const Design = () => {
             FRONTEND
           </h2>
 
-          <p className="font-semibold leading-relaxed max-w-3xl text-base sm:text-lg md:text-xl lg:text-[27.5px] text-gray-200">
+          <p className="font-semibold leading-relaxed max-w-3xl text-base sm:text-lg md:text-xl lg:text-[20.5px]">
             My approach is personal and meticulous, carefully attending to every
             detail and transforming code into experiences that feel intuitive and
             alive.

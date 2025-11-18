@@ -31,7 +31,7 @@ const MoreNote3 = () => {
   return (
     <div className="mt-28 overflow-hidden">
       <div className="py-16 px-4 pb-44 bg-[#0d0e0f] text-white">
-        <div className="max-w-7xl mx-auto">
+        <div className="mx-auto">
           {/* Top Border */}
           <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-white mb-6"></div>
 

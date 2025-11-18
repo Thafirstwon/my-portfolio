@@ -35,7 +35,7 @@ const Services = () => {
           {items.map((item, idx) => (
             <div
               key={idx}
-              className="flex flex-col flex-shrink-0 w-[70vw] sm:w-[320px] md:w-[350px] snap-center"
+              className="flex flex-col flex-shrink-0 w-[70vw] sm:w-[320px] md:w-[444px] snap-center"
             >
               {/* Title link above image */}
               <a

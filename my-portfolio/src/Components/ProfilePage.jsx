@@ -119,7 +119,8 @@ const ProfilePage = () => {
             font-semibold 
             mt-8 
             md:mt-16 
-            text-gray-200
+            text-gray-50
+          
           "
         >
           I build digital experiences with an obsessive attention <br className="hidden sm:block" /> 

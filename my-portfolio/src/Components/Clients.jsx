@@ -44,7 +44,7 @@ const Clients = () => {
   <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-white"></div>
 
   {/* Content wrapper */}
-  <div className="max-w-7xl mx-auto">
+  <div className="mx-auto">
     {/* Heading */}
     <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-medium tracking-tight mt-8 mb-16 sm:text-left">
       BRANDS
@@ -103,7 +103,7 @@ const Clients = () => {
 
   {/* About this list */}
 {/* About this list */}
-<div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 sm:gap-40 mt-4 pr-[0.75rem] sm:pr-[1rem] md:pr-[1.5rem]">
+<div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 sm:gap-20 mt-4 pr-[0.75rem] sm:pr-[1rem] md:pr-[1.5rem]">
   <div className="w-full md:w-1/4">
     <h3 className="font-medium text-xs sm:text-sm leading-relaxed text-gray-300 uppercase tracking-widest ml-1">
       {section.title}
