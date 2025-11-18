@@ -69,7 +69,7 @@ export default function Footer() {
               Instagram
             </a>
             ,{" "}
-            <a href="www.linkedin.com/in/stefan-jinad47" className="hover:underline">
+            <a href="https://www.linkedin.com/in/stefan-jinad47" className="hover:underline">
               LinkedIn
             </a>
           </div>

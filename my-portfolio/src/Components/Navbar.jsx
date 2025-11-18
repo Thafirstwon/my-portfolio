@@ -261,7 +261,7 @@ const Navbar = ({
                 <a className="hover:underline" href="https://www.instagram.com/jinad.stefan/" target="_blank" rel="noreferrer">
                   Instagram,
                 </a>
-                <a className="hover:underline" href="www.linkedin.com/in/stefan-jinad47" target="_blank" rel="noreferrer">
+                <a className="hover:underline" href="https://www.linkedin.com/in/stefan-jinad47" target="_blank" rel="noreferrer">
                   LinkedIn
                 </a>
               </div>
