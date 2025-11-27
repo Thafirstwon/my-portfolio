@@ -82,7 +82,7 @@ const NotesPage = () => {
     <section className="bg-[#0d0e0f] text-white overflow-hidden">
       {/* === Header + Filters Section === */}
       <div
-        className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 pt-32 sm:pt-40 pb-0"
+        className="mx-auto px-4 sm:px-6 md:px-10 pt-32 sm:pt-40 pb-0"
         style={sectionStyle}
       >
         <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-white mt-11 sm:mt-20"></div>
@@ -93,10 +93,10 @@ const NotesPage = () => {
 
         {/* === Filters === */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 mt-6 sm:mt-10 relative">
-          <div className="flex items-center gap-3 -ml-2">
+          <div className="flex items-center gap-3">
             <button
               onClick={() => setFiltersOpen((prev) => !prev)}
-              className="flex items-center gap-2 text-2xl sm:text-[27.5px] font-medium hover:underline relative"
+              className="flex items-center gap-2 text-lg font-medium hover:underline relative -ml-1 md:ml-[12px]"
             >
               <span>Filters</span>
               <FaChevronDown
@@ -134,7 +134,7 @@ const NotesPage = () => {
         </div>
       </div>
 
-      {filtersOpen && <div className="max-w-[1750px] mx-auto border-t border-white"></div>}
+      {filtersOpen && <div className="max-w-[1860px] mx-auto border-t border-white px-4 sm:px-6 md:px-10"></div>}
       {/* === Filter Dropdown === */}
       <AnimatePresence>
         {filtersOpen && (
@@ -143,7 +143,7 @@ const NotesPage = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="max-w-7xl mx-auto px-4 sm:px-5 pt-4 pb-4 ml-3"
+            className="px-4 sm:px-5 pt-4 pb-4 md:ml-3"
             style={sectionStyle}
           >
             <h4 className="mb-4 text-base sm:text-lg font-medium text-gray-400 uppercase">

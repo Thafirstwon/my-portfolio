@@ -46,9 +46,9 @@ export default function Footer() {
       </motion.div>
 
       {/* Bottom Bar */}
-      <div className="flex flex-col items-center md:flex-row md:justify-between  sm:text-xl md:text-base border-t border-white px-6 py-6 space-y-4 md:space-y-0 font-semibold">
+      <div className="flex flex-col items-center md:flex-row md:justify-between  sm:text-xl md:text-base border-t border-white px-6 py-6 space-y-8 md:space-y-0 font-semibold">
         {/* Links Grouped for Mobile */}
-        <div className="flex flex-col items-center md:flex-row md:gap-x-6 text-center">
+        <div className="flex flex-col items-center md:flex-row md:gap-x-4 text-center">
           <div>
             <a href="/download" className="hover:underline">
               Downloads
@@ -59,7 +59,9 @@ export default function Footer() {
               GitHub
             </a>
           </div>
+          <br/>
           <div>
+            
             <a
               href="https://www.instagram.com/jinad.stefan/"
               target="_blank"

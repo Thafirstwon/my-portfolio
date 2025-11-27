@@ -300,20 +300,20 @@ const Work = ({
                   <img
                     src={p.img}
                     alt={p.title}
-                    className="w-[105vw] sm:w-full  h-[500px] sm:h-[800px] object-cover rounded-sm shadow-lg -ml-[1.5vw] sm:ml-0"
+                    className="w-[105vw] sm:w-full  h-[500px] sm:h-[800px] object-cover rounded-sm shadow-lg -ml-[1.vw] sm:ml-1"
                   />
                   <div className="mt-6 hover:underline">
-                    <h3 className="uppercase font-semibold text-[33px]">
+                    <h3 className="uppercase font-semibold text-[22px] sm:text-[33px]">
                       {p.title}
                     </h3>
-                    <p className="mt-1 text-[33px]">{p.description}</p>
+                    <p className="mt-1 text-[18px] sm:text-[33px]">{p.description}</p>
                   </div>
-                  <div className="text-sm text-gray-400 mt-2">{p.status}</div>
+                  <div className="text-xl text-gray-400 mt-2">{p.status}</div>
                 </article>
               ))}
             </div>
           ) : (
-            <div className="max-w-[900px] mx-auto p-12 text-center border rounded-md border-white/5">
+            <div className="max-w-7xl mx-auto p-12 text-center border rounded-md border-white/5">
               <p className="text-lg mb-4">
                 Sorry, no project found matching these filters
               </p>

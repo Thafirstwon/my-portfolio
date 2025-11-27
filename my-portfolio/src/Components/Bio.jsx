@@ -39,10 +39,16 @@ const Bio = () => {
         <div className="flex justify-end">
           <div
             className="
-              w-full md:max-w-2xl lg:max-w-3xl
-              space-y-6 md:space-y-8
-              text-base sm:text-lg md:text-xl
-              leading-relaxed font-semibold
+              w-full 
+    max-w-[525px] lg:max-w-[1050px] 
+    space-y-6 md:space-y-8
+    text-base sm:text-lg md:text-xl
+    leading-relaxed font-semibold
+
+              // w-full md:max-w-2xl lg:max-w-3xl
+              // space-y-6 md:space-y-8
+              // text-base sm:text-lg md:text-xl
+              // leading-relaxed font-semibold
             "
           >
             <p>
@@ -115,7 +121,7 @@ const Bio = () => {
             <img
               src={img2}
               alt="bio-img-2"
-              className="w-full h-[300px] sm:h-[550px] md:h-[600px] object-cover object-[center_10%] rounded-sm"
+              className="w-full h-[305px] sm:h-[550px] md:h-[600px] object-cover object-[center_10%] rounded-sm"
             />
           </div>
         </div>
