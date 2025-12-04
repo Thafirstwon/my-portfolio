@@ -82,7 +82,10 @@ const ServicePage = () => {
       <Clients />
 
       {/* === Testimonial === */}
+      <div className="mt-40">
       <Testimony />
+
+      </div>
 
       {/* === Lab Section === */}
       <ColumnThree />

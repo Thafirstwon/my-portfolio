@@ -16,7 +16,7 @@ const Bio = () => {
   useNavbarAlignment();
 
   return (
-    <section className="bg-[#0d0e0f] text-white overflow-x-hidden border-t border-b border-white">
+    <section className="bg-[#0d0e0f] text-white overflow-x-hidden border-t border-white">
       <div
         className="
           w-full
@@ -44,11 +44,6 @@ const Bio = () => {
     space-y-6 md:space-y-8
     text-base sm:text-lg md:text-xl
     leading-relaxed font-semibold
-
-              // w-full md:max-w-2xl lg:max-w-3xl
-              // space-y-6 md:space-y-8
-              // text-base sm:text-lg md:text-xl
-              // leading-relaxed font-semibold
             "
           >
             <p>
@@ -103,7 +98,7 @@ const Bio = () => {
         >
           <div
             className="
-              flex-1 min-w-[160px] max-w-[420px] md:max-w-[525px]
+              flex-1 min-w-[160px] max-w-[420px] md:max-w-[520px]
             "
           >
             <img
@@ -115,7 +110,7 @@ const Bio = () => {
 
           <div
             className="
-              flex-1 min-w-[160px] max-w-[420px] md:max-w-[525px]
+              flex-1 min-w-[160px] max-w-[420px] md:max-w-[520px]
             "
           >
             <img

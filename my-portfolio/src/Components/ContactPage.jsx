@@ -1,4 +1,3 @@
-// src/Components/ContactPage.jsx
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import ThreeColumnSection from "./ThreeColumnSection";
@@ -18,12 +17,6 @@ const fadeInUp = {
 
 const ContactPage = () => {
   const { setNavbarStyles } = useNavbar();
-//   const { navbarStyles, setDarkNavbar } = useNavbar();
-
-//   // Navbar tweak
-//   useEffect(() => {
-//   setDarkNavbar();
-// }, [setDarkNavbar]);
 
 useNavbarAlignment();
 
@@ -89,16 +82,6 @@ useNavbarAlignment();
   </div>
 </motion.div>
 
-        {/* Image collage */}
-       {/* <motion.div
-  variants={fadeInUp}
-  initial="hidden"
-  whileInView="show"
-  viewport={{ once: true }}
-  className="grid grid-cols-2 md:grid-cols-3 gap-2 px-3 sm:px-3 md:px-6 lg:px-8 mr-[-20px] ml-[-15px]"
-
-> */}
-
 <motion.div
   variants={fadeInUp}
   initial="hidden"
@@ -121,10 +104,7 @@ useNavbarAlignment();
     overflow-hidden
   "
 >
-
-
-
-          {[img2, img1, img3, img4, img5, img5].map((src, i) => (
+{[img2, img1, img3, img4, img5, img5].map((src, i) => (
             <motion.img
               key={i}
               src={src}
@@ -148,7 +128,7 @@ useNavbarAlignment();
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="mt-12 mr-[-10px] ml-[-5px]"
+          className="mt-52 mr-[-10px] ml-[-5px]"
         >
           <ThreeColumnSection />
         </motion.div>

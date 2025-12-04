@@ -1,6 +1,5 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect } from "react";
 
 import Homepage from "./Homepage";
 import ProfilePage from "./ProfilePage";
@@ -13,42 +12,32 @@ import NoteDetail from "./NoteDetail";
 import Download from "./Download";
 
 const pageVariants = {
-  initial: { opacity: 0, y: 10 },
+  initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -10 },
+  exit: { opacity: 0, y: -20 },
 };
 
-function AnimatedRoutes({
-  isLockedModalOpen,
-  setIsLockedModalOpenFromNav,
-  overlayOpen,
-  setOverlayOpen,
-}) {
-  const location = useLocation();
-  const locationForRoutes =
-    location.pathname === "/menu" ? { ...location, pathname: "/" } : location;
+const pageTransition = { duration: 0.4, ease: "easeInOut" };
 
-  // ✅ Scroll to top whenever the route changes
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [location.pathname]);
+function AnimatedRoutes() {
+  const location = useLocation();
 
   return (
-    <div className="relative bg-[#0d0e0f] text-white min-h-screen overflow-hidden">
-      {/* ✅ Persistent dark background that NEVER unmounts */}
+    <div className="relative bg-[#0d0e0f] text-white min-h-screen">
+      {/* persistent background if needed */}
       <div className="fixed inset-0 bg-[#0d0e0f] -z-10" />
 
-      <AnimatePresence mode="wait" initial={false}>
+      <AnimatePresence mode="wait">
         <motion.div
-          key={locationForRoutes.pathname}
+          key={location.pathname}
           initial="initial"
           animate="animate"
           exit="exit"
           variants={pageVariants}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
+          transition={pageTransition}
           className="min-h-screen"
         >
-          <Routes location={locationForRoutes}>
+          <Routes location={location}>
             <Route path="/" element={<Homepage />} />
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/services" element={<ServicePage />} />
@@ -60,10 +49,10 @@ function AnimatedRoutes({
               path="/work"
               element={
                 <Work
-                  isLockedModalOpen={isLockedModalOpen}
-                  setIsLockedModalOpenFromNav={setIsLockedModalOpenFromNav}
-                  overlayOpen={overlayOpen}
-                  setOverlayOpen={setOverlayOpen}
+                  isLockedModalOpen={false}
+                  setIsLockedModalOpenFromNav={() => {}}
+                  overlayOpen={false}
+                  setOverlayOpen={() => {}}
                 />
               }
             />

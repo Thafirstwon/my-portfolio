@@ -51,7 +51,7 @@ const Mozart = () => {
             <p className='text-[27.5px]  mb-4 md:mb-0'>
                   New client  — October 11, 2025
             </p>
-             <p className='md:max-w-3xl font-semibold leading-relaxed md:ml-10'>
+             <p className='md:max-w-3xl font-semibold leading-relaxed md:ml-10 md:text-xl'>
                  I’m excited to introduce Mozart, a talented UX/UI designer, long-time friend, and now a new client. With years of experience creating seamless digital experiences, Mozart brings an unmatched sense of clarity and craft to every project. We’ve had the chance to collaborate closely on HAVE, and the ONE project—and each time, his attention to detail and design intuition elevate the entire process.
             </p>
       </div>

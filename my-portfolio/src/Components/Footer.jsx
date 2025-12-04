@@ -33,7 +33,7 @@ export default function Footer() {
         </motion.h1>
 
         <motion.h1
-          className="text-[28vw] xs:text-[30vw] sm:text-[25vw] md:text-[20vw] lg:text-[15vw] origin-bottom-left"
+          className="text-[26vw] xs:text-[30vw] sm:text-[25vw] md:text-[20vw] lg:text-[15vw] origin-bottom-left"
           variants={{
             hidden: { opacity: 0, y: 60 },
             visible: { opacity: 1, y: 0, transition: { duration: 1 } },
@@ -59,7 +59,6 @@ export default function Footer() {
               GitHub
             </a>
           </div>
-          <br/>
           <div>
             
             <a

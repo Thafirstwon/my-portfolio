@@ -113,7 +113,7 @@ const Studio = () => {
       </div>
 
       {/* Bottom border */}
-      <div className="border-t border-white mt-20 md:mt-40" />
+      <div className="border-t border-whit mt-20 md:mt-40" />
     </section>
   );
 };

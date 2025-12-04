@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import m1 from "../assets/multi.jpg";
 import solo from "../assets/solo.png";
@@ -16,10 +16,19 @@ const NotesPage = () => {
   const [selectedFilter, setSelectedFilter] = useState([]);
   const { setDarkNavbar } = useNavbar();
   const { sectionStyle } = useNavbarAlignment();
+  const { pathname } = useLocation
 
   useEffect(() => {
     setDarkNavbar(); // keep dark navbar
   }, [setDarkNavbar]);
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "instant", // or "smooth"
+    });
+  }, [pathname]);
+
 
   const types = [
     "Awards",
@@ -197,7 +206,7 @@ const NotesPage = () => {
                 <img
                   src={p.img}
                   alt={p.title}
-                  className="w-full h-[360px] sm:h-[500px] md:h-[580px] object-cover rounded-sm shadow-lg"
+                  className="w-full h-[360px] sm:h-[500px] md:h-[650px] object-cover rounded-sm shadow-lg"
                 />
                 <p className="mt-4 text-2xl sm:text-[28px] font-semibold group-hover:underline decoration-white">
                   {p.title}

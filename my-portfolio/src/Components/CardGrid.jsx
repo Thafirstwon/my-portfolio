@@ -8,6 +8,7 @@ const tools = [
   { icon: "fa-brands fa-react", label: "React" },
   { icon: "fa-solid fa-robot", label: "ChatGPT" },
   { icon: "fa-brands fa-js", label: "JavaScript" },
+  { icon: "fa-solid fa-code", label: "TypeScript" },
   { icon: "fa-brands fa-figma", label: "Figma" },
   { icon: "fa-solid fa-code", label: "VS Code" },
   { icon: "fa-solid fa-database", label: "Database" },

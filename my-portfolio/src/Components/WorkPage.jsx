@@ -164,7 +164,7 @@ const Work = ({
       <div className="w-full py-2 pt-48">
         <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-white mb-5"></div>
 
-        <h1 className="text-6xl md:text-7xl font-serif uppercase mb-12 text-center">
+        <h1 className="text-6xl md:text-7xl font-serif uppercase mb-20 text-center">
           WORK
         </h1>
 
@@ -211,7 +211,7 @@ const Work = ({
       </div>
 
       {filtersOpen && (
-        <div className="max-w-[1750px] mx-auto border-t border-white"></div>
+        <div className="max-w-[1850px] mx-auto border-t border-white"></div>
       )}
 
       <div className="p-4">

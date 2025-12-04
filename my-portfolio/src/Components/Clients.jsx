@@ -46,12 +46,12 @@ const Clients = () => {
   {/* Content wrapper */}
   <div className="mx-auto">
     {/* Heading */}
-    <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-medium tracking-tight mt-8 mb-16 sm:text-left">
+    <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-medium tracking-tight mt-8 mb-16 sm:text-left px-">
       BRANDS
     </h2>
 
     {/* Columns */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-14 pb-16">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-14 pb-16 px-1">
       {columns.map((col, idx) => {
         const anim = animationClass(col.direction);
         return (

@@ -9,12 +9,8 @@ const ThreeColumnSection = () => {
 
   return (
   <section className="bg-[#0d0e0f] text-white border-t border-b border-white overflow-hidden">
-      <div className="w-full px-5 pt-6 md:pt-6 pb-16 md:pb-44">
-        {/* 
-          On mobile: flex-row scrollable horizontally 
-          On desktop: 3-column grid layout 
-        */}
-        <div className="flex md:grid md:grid-cols-3 gap-3 overflow-x-auto md:overflow-visible snap-x snap-mandatory scroll-smooth scrollbar-hide">
+      <div className="w-full px-6 pt-6 md:pt-6 pb-16 md:pb-72">
+        <div className="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory scroll-smooth scrollbar-hide">
           {items.map((item, i) => (
             <a
               key={i}
@@ -30,7 +26,7 @@ const ThreeColumnSection = () => {
               <img
                 src={item.img}
                 alt={item.title}
-                className="w-full h-[450px] sm:h-[500px] md:h-[600px] object-cover rounded-sm shadow-lg group-hover:opacity-90 transition"
+                className="w-full h-[450px] sm:h-[500px] md:h-[700px] object-cover rounded-sm shadow-lg group-hover:opacity-90 transition"
               />
             </a>
           ))}

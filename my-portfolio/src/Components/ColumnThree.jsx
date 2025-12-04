@@ -8,11 +8,11 @@ const ColumnThree = () => {
   ];
 
   return (
-    <section className="bg-[#0d0e0f] text-white border-t border-b border-white overflow-hidden side-nudge">
+    <section className="bg-[#0d0e0f] text-white border-t border-b border-white overflow-hidden px-5">
       <div className="w-full pt-6 md:pt-6 pb-16 md:pb-44">
         {/* On mobile: flex-row scrollable horizontally 
             On desktop: 3-column grid layout */}
-        <div className="flex md:grid md:grid-cols-3 gap-2 overflow-x-auto md:overflow-visible snap-x snap-mandatory scroll-smooth scrollbar-hide">
+        <div className="flex md:grid md:grid-cols-3 gap-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory scroll-smooth scrollbar-hide">
           {items.map((item, i) => (
             <a
               key={i}
@@ -28,7 +28,7 @@ const ColumnThree = () => {
               <img
                 src={item.img}
                 alt={item.title}
-                className="w-full h-[450px] sm:h-[500px] md:h-[600px] object-cover rounded-sm shadow-lg group-hover:opacity-90 transition"
+                className="w-full h-[450px] sm:h-[500px] md:h-[650px] object-cover rounded-sm shadow-lg group-hover:opacity-90 transition"
               />
             </a>
           ))}
