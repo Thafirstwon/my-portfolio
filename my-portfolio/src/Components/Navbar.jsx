@@ -126,7 +126,7 @@ const Navbar = ({
               initial={false}
               animate={{ opacity: menuOpen ? 1 : 0, x: menuOpen ? 0 : 6 }}
               transition={{ duration: 0.25 }}
-              className="text-[1.125rem] sm:text-[1.325rem] font-suisse font-thin absolute left-0 top-0 hover:underline underline-offset-4"
+              className="text-[1.125rem] sm:text-[1.325rem] font-suisse font-thin absolute left-0 top-0 hover:underline underline-offset-2"
               aria-hidden={menuOpen ? "false" : "true"}
             >
               Close
@@ -186,8 +186,8 @@ const Navbar = ({
             key="menu-overlay"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            transition={{ duration: 0.35, ease: "easeInOut" }}
+            exit={{ opacity: 0, y: 20, scale: 0.98 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
             // ✅ FIXED: force solid background color
             className="fixed inset-0 z-[300] bg-[#0d0e0f] text-white overflow-hidden"
           >

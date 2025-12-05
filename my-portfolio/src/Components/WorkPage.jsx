@@ -211,7 +211,7 @@ const Work = ({
       </div>
 
       {filtersOpen && (
-        <div className="max-w-[1850px] mx-auto border-t border-white"></div>
+        <div className="max-w-[1858px] mx-auto border-t border-white"></div>
       )}
 
       <div className="p-4">
