@@ -43,7 +43,7 @@ const Bio = () => {
     max-w-[525px] lg:max-w-[1050px] 
     space-y-6 md:space-y-8
     text-base sm:text-lg md:text-xl
-    leading-relaxed font-semibold
+    leading-relaxed font-suisse
             "
           >
             <p>

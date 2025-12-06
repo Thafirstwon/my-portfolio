@@ -50,7 +50,7 @@ const Design = () => {
             FRONTEND
           </h2>
 
-          <p className="font-semibold leading-relaxed max-w-3xl text-base sm:text-lg md:text-xl lg:text-[20.5px]">
+          <p className="font-suisse leading-relaxed max-w-3xl text-base sm:text-lg md:text-xl lg:text-[20.5px]">
             My approach is personal and meticulous, carefully attending to every
             detail and transforming code into experiences that feel intuitive and
             alive.
@@ -60,7 +60,7 @@ const Design = () => {
             {skills.map((skill, index) => (
               <li
                 key={index}
-                className="flex items-center gap-3 text-base sm:text-lg md:text-xl lg:text-[24px] font-semibold"
+                className="flex items-center gap-3 text-base sm:text-lg md:text-xl lg:text-[24px] font-normal"
               >
                 <span className="w-1.5 h-1.5 bg-white flex-shrink-0"></span>
                 <span>{skill}</span>

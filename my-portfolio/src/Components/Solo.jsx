@@ -58,7 +58,7 @@ const Solo = () => {
           <p className="text-[27.5px] mb-4 md:mb-0">
             Updates - October 11, 2025
           </p>
-          <p className="md:max-w-3xl font-semibold leading-relaxed md:ml-10 md:text-xl">
+          <p className="md:max-w-3xl font-suisse leading-relaxed md:ml-10 md:text-xl">
             With this new portfolio and refreshed identity, it feels like the
             perfect time to remind you that I can help in all kinds of setups.
             Whether you’re looking for a solo developer, need a small team

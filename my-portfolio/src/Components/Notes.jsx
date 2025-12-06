@@ -136,7 +136,7 @@ const Notes = () => {
         ))}
       </div>
 
-      <div className="border-t border-white -mx-6"></div>
+      <div className="border-t border-white -mx-6 mt-60"></div>
     </div>
   );
 };

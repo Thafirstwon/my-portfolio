@@ -56,7 +56,7 @@ const NewUpdatePage = () => {
           <p className="text-xl sm:text-[25px] md:text-[27.5px] mb-6 md:mb-0">
             Updates — October 11, 2025
           </p>
-          <p className="md:max-w-3xl leading-relaxed md:ml-10 text-base sm:text-lg font-semibold">
+          <p className="md:max-w-3xl leading-relaxed md:ml-10 text-base sm:text-xl font-suisse">
             This update marks a new chapter in redefining the portfolio’s
             direction — merging clean design, functional precision, and
             purposeful storytelling to showcase creativity through code.
@@ -71,7 +71,7 @@ const NewUpdatePage = () => {
           <h2 className="text-4xl sm:text-5xl md:text-[66px] font-semibold">
             OLD TIMES
           </h2>
-          <p className="md:max-w-3xl text-lg sm:text-[22px] md:text-[27.5px] font-semibold leading-relaxed md:ml-10">
+          <p className="md:max-w-3xl text-lg sm:text-[22px] md:text-[27.5px] font-suisse leading-relaxed md:ml-10">
            A look back at the early stages of experimentation — bold ideas, raw concepts, and the evolution of craftsmanship that shaped what you see today.
 
 When I created my first portfolio, I was genuinely proud of it. It was one of those experiences that developed my sense of creativity and expanded my imagination. It might not have looked perfect, but at that time, it meant everything to me.
@@ -99,7 +99,7 @@ I once planted in my mind the desire to understand the wisdom of my time — tec
           <h2 className="text-4xl sm:text-5xl md:text-[66px] font-semibold">
             NEW <br /> BEGINNINGS
           </h2>
-          <p className="md:max-w-3xl text-lg sm:text-[22px] md:text-[27.5px] font-semibold leading-relaxed md:ml-10">
+          <p className="md:max-w-3xl text-lg sm:text-[22px] md:text-[27.5px] font-suisse leading-relaxed md:ml-10">
             And now here we are — finally, with a fresh, fully responsive rebuild.
 
 I’ve poured countless hours into this at least a dozen major iterations. As always, it’s been a deep exercise in reflection: how do I present myself to the world, to fellow developers, to collaborators, to clients?
@@ -130,7 +130,7 @@ The first realization was that I wanted to define my voice more clearly, to be e
     </div>
   </div>
 
-  <p className="md:max-w-3xl font-semibold text-lg sm:text-[22px] md:text-[27.5px] leading-relaxed md:ml-auto">
+  <p className="md:max-w-3xl font-suisse text-lg sm:text-[22px] md:text-[27.5px] leading-relaxed md:ml-auto">
     Every layer of this project reflects collaboration, creative tension, and refinement —
     a process that values detail and emotion equally.
   </p>
@@ -144,7 +144,7 @@ The first realization was that I wanted to define my voice more clearly, to be e
             alt="Creative expansion"
             className="w-full h-auto object-cover mx-auto mb-8 sm:mb-10"
           />
-          <p className="md:max-w-3xl font-semibold text-lg sm:text-[22px] md:text-[27.5px] leading-relaxed md:ml-auto">
+          <p className="md:max-w-3xl font-suisse text-lg sm:text-[22px] md:text-[27.5px] leading-relaxed md:ml-auto">
             Designed to adapt — the new layout embraces fluid interaction while
             maintaining visual precision. A portfolio meant to be explored, not
             just viewed.
@@ -165,7 +165,7 @@ The first realization was that I wanted to define my voice more clearly, to be e
               className="w-full h-auto object-cover"
             />
           </div>
-          <p className="md:max-w-3xl text-lg sm:text-[22px] md:text-[27.5px] font-semibold leading-relaxed md:ml-auto">
+          <p className="md:max-w-3xl text-lg sm:text-[22px] md:text-[27.5px] font-suisse leading-relaxed md:ml-auto">
             The journey continues — evolving aesthetics, refining typography,
             and balancing motion with stillness. This chapter is only the
             beginning.

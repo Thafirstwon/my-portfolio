@@ -46,14 +46,14 @@ const WorkMode = () => {
 
           {/* Content under line */}
           
-<div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 "> <h3 className={`font-medium font-serif w-full md:w-1/4 ${ section.title === "Inquiries" ? "text-5xl " : "text-[44px]" }`}>
+<div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 "> <h3 className={`font-suisse w-full md:w-1/4 ${ section.title === "Inquiries" ? "text-5xl " : "text-[44px]" }`}>
 
               {section.title}
             </h3>
             <p className={`${
                   section.title === "Join the roster"
                   ? "text-xl font-medium"
-                  : "ext-base sm:text-lg md:text-[22px] font-medium"
+                  : "ext-base sm:text-lg md:text-[22px] font-suisse"
             } leading-relaxed w-full md:w-3/4`}
               dangerouslySetInnerHTML={{ __html: section.description}}>
             </p>

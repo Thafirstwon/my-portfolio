@@ -303,7 +303,7 @@ const Work = ({
                     className="w-[105vw] sm:w-full  h-[500px] sm:h-[800px] object-cover rounded-sm shadow-lg -ml-[1.vw] sm:ml-1"
                   />
                   <div className="mt-6 hover:underline">
-                    <h3 className="uppercase font-semibold text-[22px] sm:text-[33px]">
+                    <h3 className="uppercase font-suisse text-[22px] sm:text-[33px]">
                       {p.title}
                     </h3>
                     <p className="mt-1 text-[18px] sm:text-[33px]">{p.description}</p>

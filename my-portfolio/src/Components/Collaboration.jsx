@@ -35,7 +35,7 @@ const Collaboration = () => {
       }}
       className="
         text-white overflow-hidden 
-        py-16 sm:py-20 lg:py-24 bg-[#0d0e0f]
+        py-16 sm:py-20 lg:py-2 bg-[#0d0e0f]
         px-6 sm:px-8 md:px-0   /* 👈 ensures balance on small screens */
       "
     >
@@ -51,15 +51,15 @@ const Collaboration = () => {
 
       {/* Sections */}
       {sections.map((section, index) => (
-        <div key={index} className="mb-12 sm:mb-16 pb-2 collab-nudge-left">
+        <div key={index} className="mb-12 sm:mb-16 pb-24 collab-nudge-left">
           {/* Line above each section */}
-          {/* <div className="border-t border-white mb-4 sm:mb-6 ml-6 sm:ml-8 md:ml-3 mr-[-5px]"></div> */}
+        
            <div className="border-t border-white mb-4 sm:mb-6"></div>
 
           {/* Content */}
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 md:gap-44 collab-nudge-left">
             <h3
-              className={`font-medium font-serif w-full md:w-1/4 md:ml-2 ${
+              className={`font-medium font-suisse w-full md:w-1/4 md:ml-2 ${
                 section.title === "Join the roster"
                   ? "text-base sm:text-lg"
                   : "text-2xl sm:text-3xl md:text-[50px] lg:ml-2"
@@ -72,7 +72,7 @@ const Collaboration = () => {
               className={`w-full md:w-3/2 leading-relaxed ${
                 section.title === "Join the roster"
                   ? "text-sm sm:text-base"
-                  : "text-base sm:text-lg md:text-[22px] font-medium"
+                  : "text-base sm:text-lg md:text-[22px] font-suisse"
               }`}
               dangerouslySetInnerHTML={{ __html: section.description }}
             />

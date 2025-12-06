@@ -29,7 +29,7 @@ const Content = () => {
                               {section.title}
                         </h3>
 
-                        <p className='text-base sm:text-lg md:text-[27.5px] md:w-3/2 leading-relaxed font-medium'>
+                        <p className='text-base sm:text-lg md:text-[27.5px] md:w-3/2 leading-relaxed font-suisse'>
                         {section.description}
                         </p>
                   </div>
