@@ -110,7 +110,7 @@ const Clients = () => {
     </h3>
   </div>
   <div className="w-full md:w-3/4">
-    <p className="text-sm sm:text-base font-medium text-gray-50 leading-relaxed">
+    <p className="text-sm sm:text-base font-suisse text-gray-50 leading-relaxed">
       {section.description}
     </p>
   </div>
