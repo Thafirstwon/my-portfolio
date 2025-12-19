@@ -63,7 +63,7 @@ const Design = () => {
                 key={index}
                 className="flex items-center gap-3 text-base sm:text-lg md:text-xl lg:text-[24px] font-normal"
               >
-                <span className="w-1.5 h-1.5 bg-white flex-shrink-0"></span>
+                <span className="w-1.5 h-1.5 bg-black dark:bg-white flex-shrink-0"></span>
                 <span>{skill}</span>
               </li>
             ))}

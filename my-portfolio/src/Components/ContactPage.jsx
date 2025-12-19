@@ -167,7 +167,7 @@ const ContactPage = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="mt-8"
+          className=""
         >
           <Footer />
         </motion.div>

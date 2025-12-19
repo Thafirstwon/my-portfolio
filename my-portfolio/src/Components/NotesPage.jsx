@@ -125,7 +125,7 @@ const NotesPage = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -8 }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
-                  className="absolute -top-2 left-24 bg-black dark:bg-white/80 text-black text-xs sm:text-sm font-bold w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center shadow-md"
+                  className="absolute -top-2 left-24 bg-black dark:bg-white/80 text-white dark:text-black text-xs sm:text-sm font-bold w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center shadow-md"
                 >
                   {selectedFilter.length}
                 </motion.div>

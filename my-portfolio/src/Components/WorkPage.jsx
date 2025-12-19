@@ -395,14 +395,14 @@ const Work = ({
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className="px-6 py-2 border border-white/40 hover:border-white font-medium flex items-center justify-center min-w-[120px]"
+                    className="px-6 py-2 border border-white/40 hover:border-black dark:hover:border-white font-medium flex items-center justify-center min-w-[120px]"
                   >
                     {isLoading ? (
                       <div className="relative w-5 h-5 flex items-center justify-center">
                         {[...Array(8)].map((_, i) => (
                           <span
                             key={i}
-                            className="absolute w-1.5 h-1.5 bg-gray-400 rounded-full"
+                            className="absolute w-1.5 h-1.5 bg-gray-400 rounded-sm"
                             style={{
                               transform: `rotate(${i * 45}deg) translate(8px)`,
                               animation: "spinDots 1s linear infinite",
