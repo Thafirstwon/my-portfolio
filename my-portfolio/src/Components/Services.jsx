@@ -24,9 +24,9 @@ const Services = () => {
 
   return (
     <div
-    className="bg-[#0d0e0f] text-white overflow-hidden">
+    className="bg-white dark:bg-[#0d0e0f] text-black dark:text-white overflow-hidden">
       {/* Full width top border */}
-      <div className="border-t border-white"></div>
+      <div className="border-t border-black dark:border-white"></div>
 
       {/* Scrollable section with snap */}
       <div className="overflow-x-auto scrollbar-hide snap-x snap-mandatory scroll-smooth" style={sectionStyle}
@@ -50,16 +50,13 @@ const Services = () => {
                 <img
                   src={item.img}
                   alt={item.title}
-                  className="w-full h-[380px] sm:h-[420px] md:h-[460px] object-cover"
+                  className="w-full h-[480px] sm:h-[520px] md:h-[560px] object-cover"
                 />
               </a>
             </div>
           ))}
         </div>
       </div>
-
-      {/* Full width bottom border */}
-      <div className="border-b border-white"></div>
     </div>
   );
 };

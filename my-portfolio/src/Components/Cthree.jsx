@@ -8,7 +8,7 @@ const Cthree = () => {
   ];
 
   return (
-    <section className="bg-[#0d0e0f] text-white border-t border-b border-white overflow-hidden px-6">
+    <section className="bg-white dark:bg-[#0d0e0f] text-black dark:text-white border-t border-b border-black dark:border-white overflow-hidden px-6">
       {/* full-width inner border (keeps edge-to-edge lines) */}
       <div className=" w-full pt-4 md:pt-6 pb-16 md:pb-44">
         {/* 

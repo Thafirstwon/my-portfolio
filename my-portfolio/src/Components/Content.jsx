@@ -10,9 +10,9 @@ const Content = () => {
       },
 ];
   return (
-    <section className='text-white overflow-hidden py-16 sm:py-20 lg:py-24 bg-[#0d0e0f] px-[30px] sm:px-6 md:px-3'>
+    <section className='bg-white dark:bg-[#0d0e0f] text-black dark:text-white overflow-hidden py-16 sm:py-20 lg:py-24 px-[30px] sm:px-6 md:px-3 border-black dark:border-white'>
 
-      <div className='relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-white'></div>
+      <div className='relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-black dark:border-white'></div>
 
       <h2 className='text-4xl sm:text-4xl md:text-6xl font-serif font-medium tracking-tight mt-8 mb-12 sm:mb-20 md:text-left ml-[-13px] sm:ml-[10px]'>
             CONTENT
@@ -21,7 +21,7 @@ const Content = () => {
       {sections.map((section, index) => (
             <div key={index} className='mb-12 sm:mb-16 pb-2 collab-nudge-left'>
 
-                  <div className='border-t border-white mb-4 sm:mb-6'></div>
+                  <div className='border-t border-black dark:border-white mb-4 sm:mb-6'></div>
 
                   <div className='flex flex-col md:flex-row md:items-start md:justify-between gap-4 md:gap-44 collab-nudge-left'>
                         <h3

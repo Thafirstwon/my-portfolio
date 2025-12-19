@@ -88,7 +88,7 @@ const Notes = () => {
   }, []);
 
   return (
-    <div className="bg-[#0d0e0f] text-white px-[19px] sm:px-5 py-4 overflow-hidden">
+    <div className="bg-white dark:bg-[#0d0e0f] text-black dark:text-white px-[19px] sm:px-5 py-4 overflow-hidden pb-44 border-t border-black dark:border-white">
       {/* Header */}
       <div className="flex justify-between items-center mb-10">
         <h2 className="text-3xl sm:text-5xl font-serif font-bold">NOTES</h2>
@@ -123,20 +123,18 @@ const Notes = () => {
               <img
                 src={note.img}
                 alt={note.title}
-                className="w-full h-[350px] sm:h-[600px] object-cover"
+                className="w-full h-[450px] sm:h-[700px] object-cover"
               />
               <p className="mt-4 font-semibold text-1xl sm:text-[33px] group-hover:underline decoration-[1px]">
                 {note.title}
               </p>
-              <p className="text-base sm:text-[22px] text-gray-400 mt-1">
+              <p className="text-base sm:text-[22px] text-black dark:text-gray-400 mt-1">
                 {note.category} - {note.date}
               </p>
             </Link>
           </div>
         ))}
       </div>
-
-      <div className="border-t border-white -mx-6 mt-60"></div>
     </div>
   );
 };

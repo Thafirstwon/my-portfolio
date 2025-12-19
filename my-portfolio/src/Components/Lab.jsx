@@ -10,11 +10,11 @@ const Lab = () => {
   };
 
   return (
-    <section className="bg-[#0d0e0f] text-white overflow-hidden">
+    <section className="bg-white dark:bg-[#0d0e0f] text-black dark:text-white overflow-hidden">
       {/* Header Section */}
       <div className=" py-2 pt-40 side-nudge">
         {/* Top full-width border */}
-        <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-white mb-10"></div>
+        <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-black dark:border-white mb-10"></div>
 
         {/* Heading */}
         <h1 className="text-6xl md:text-7xl font-serif uppercase pb-32 text-center">
@@ -23,7 +23,7 @@ const Lab = () => {
 
         {/* Inner border before About section */}
         <div className="mb-4">
-          <div className="border-t border-white side-nudge"></div>
+          <div className="border-t border-black dark:border-white side-nudge"></div>
         </div>
 
         {/* About this list section */}
@@ -38,7 +38,7 @@ const Lab = () => {
       </div>
 
       {/* Bottom full-width border */}
-      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-white mt-48"></div>
+      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-black dark:border-white mt-48"></div>
 
       {/* ContactCta */}
       <ContactCta />

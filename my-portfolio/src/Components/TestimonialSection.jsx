@@ -46,7 +46,7 @@ export default function TestimonialSection() {
   }, []);
 
   return (
-    <div className="relative w-full bg-[#0d0e0f] text-white py-16 sm:py-20 md:py-28 min-h-[80vh] sm:min-h-[85vh] md:min-h-[90vh] px-4 sm:px-8 overflow-hidden">
+    <div className="relative w-full bg-white dark:bg-[#0d0e0f] text-black dark:text-white py-16 sm:py-20 md:py-28 min-h-[80vh] sm:min-h-[85vh] md:min-h-[90vh] px-4 sm:px-8 overflow-hidden border-t border-black dark:border-white">
       {/* Floating Title */}
       <h2 className="absolute top-4 sm:top-6 left-4 sm:left-6 text-2xl sm:text-4xl md:text-5xl font-serif font-bold mt-3 ">
         TESTIMONIALS
@@ -79,7 +79,7 @@ export default function TestimonialSection() {
             <p className="mt-6 font-semibold text-lg sm:text-xl md:text-[26px]">
               {testimonials[index].name}
             </p>
-            <p className="text-sm sm:text-base md:text-lg text-gray-300">
+            <p className="text-sm sm:text-base md:text-lg text-black dark:text-gray-300">
               {testimonials[index].role}
             </p>
           </motion.div>
@@ -93,7 +93,7 @@ export default function TestimonialSection() {
             key={i}
             onClick={() => setIndex(i)}
             className={`text-xs sm:text-sm md:text-base transition ${
-              i === index ? "underline font-bold" : "text-gray-400"
+              i === index ? "underline font-bold" : "text-black dark:text-gray-400"
             }`}
           >
             {i + 1}

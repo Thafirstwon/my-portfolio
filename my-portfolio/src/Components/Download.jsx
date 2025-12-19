@@ -38,22 +38,22 @@ const Download = () => {
      }, [setDarkNavbar]);
 
   return (
-    <section className="bg-[#0d0e0f] text-white py-16 mt-36">
+    <section className="bg-white dark:bg-[#0d0e0f] text-black dark:text-white py-16 pt-36">
       {/* Top Divider */}
       <div className='px-3 md:px-3'>
-      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-white mb-8"></div>
+      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-black dark:border-white mb-8"></div>
 
       {/* Header */}
       <h1 className="text-5xl md:text-8xl font-serif text-center mb-16 pb-16">
         DOWNLOADS
       </h1>
 
-      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-white mb-6"></div>
+      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-black dark:border-white mb-6"></div>
 
       {/* Download Sections */}
       {downloads.map((section, index) => (
         <div key={index} className="mb-20">
-          <h2 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl  font-serif mb-6 border-b border-white pb-8  sm:pl-1.5">
+          <h2 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl  font-serif mb-6 border-b border-black dark:border-white pb-8  sm:pl-1.5">
             {section.category.toUpperCase()}
           </h2>
 
@@ -65,7 +65,7 @@ const Download = () => {
                 <a
                   href={item.file}
                   download
-                  className="group block relative overflow-hidden rounded-sm border border-white hover:border-gray-300 transition duration-500"
+                  className="group block relative overflow-hidden rounded-sm border border-black dark:border-white hover:border-gray-300 transition duration-500"
                 >
                   <img
                     src={item.images || "/downloads/placeholder.png"}
@@ -93,19 +93,19 @@ const Download = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="mt-1 mr-[-1px] ml-[-px]"
+        className=""
       >
         <Content />
       </motion.div>
 
-      <div className="relative left-1/2 right-1/2 -mx-[50vw] border-t border-white w-screen"></div>
+      <div className="relative left-1/2 right-1/2 -mx-[50vw] border-t border-black dark:border-white w-screen"></div>
 
       <motion.div
         variants={fadeInUp}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="mt-1 mr-[-1px] ml-[-px]"
+        className=""
       >
         <ThirdVersion />
       </motion.div>
@@ -115,7 +115,7 @@ const Download = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="mt-1 mr-[-21px] ml-[-15px]"
+        className=""
       >
         <ContactCta />
       </motion.div>
@@ -125,7 +125,7 @@ const Download = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="mt-1 mr-[-21px] ml-[-15px]"
+        className=""
       >
         <Footer />
       </motion.div>

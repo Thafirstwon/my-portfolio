@@ -11,14 +11,18 @@ import Fav from "./Fav";
 import { useNavbarAlignment } from "./useNavbarAlignment";
 import { motion } from "framer-motion";
 
-
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
 
 const ProfilePage = () => {
-  const { setNavbarStyles } = useNavbar();
+  const {
+    setTransparentNavbar,
+    setDarkNavbar,
+    setMidDarkNavbar,
+    navbarBackground,
+  } = useNavbar();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,30 +32,28 @@ const ProfilePage = () => {
       const sectionTop = secondSection.getBoundingClientRect().top;
 
       if (sectionTop <= 0) {
-        setNavbarStyles({
-          background: "bg-[#0d0e0f]",
-          blur: false,
-        });
+        // Once the second section hits the top, switch to dark navbar
+        setDarkNavbar();
       } else {
-        setNavbarStyles({
-          background: "transparent",
-          blur: false,
-        });
+        // At hero part (above second section) navbar should be transparent
+        setTransparentNavbar();
       }
     };
 
     window.addEventListener("scroll", handleScroll);
+
+    // Run once on mount so initial state is correct
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [setNavbarStyles]);
+  }, [setTransparentNavbar, setDarkNavbar]);
 
   useNavbarAlignment();
 
   return (
     <div className="w-full overflow-hidden">
       {/* === Top Section === */}
-      <section className="relative bg-[#0c0f14] text-white flex items-center justify-center min-h-[100vh] overflow-hidden">
+      <section className="relative bg-white dark:bg-[#0d0e0f] text-black dark:text-white  flex items-center justify-center min-h-[100vh] overflow-hidden">
         {/* Huge PROFILE text */}
         <h1
           className="
@@ -96,8 +98,7 @@ const ProfilePage = () => {
       <section
         id="profile-second-section"
         className="
-          bg-[#0d0e0f] 
-          text-white 
+         bg-white dark:bg-[#0d0e0f] text-black dark:text-white  
           flex 
           justify-end 
           py-16 
@@ -119,8 +120,8 @@ const ProfilePage = () => {
             font-semibold 
             mt-8 
             md:mt-16 
-            text-gray-50
-          
+            text-black
+            dark:text-gray-50          
           "
         >
           I build digital experiences with an obsessive attention <br className="hidden sm:block" /> 
@@ -130,21 +131,21 @@ const ProfilePage = () => {
       </section>
 
       {/* === Other Components === */}
-       <motion.div
-       variants={fadeInUp}
-       initial="hidden"
-       whileInView="show"
-       viewport={{ once: true }}
-       className="mr-[-10px] ml-[-5px]"
-       >
-      <Bio />
-      <Milestone />
-      <Studio />
-      <Fav />
-      <Cthree />
-      <ContactCta />
-      <Footer />
-       </motion.div>
+      <motion.div
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="mr-[-10px] ml-[-5px]"
+      >
+        <Bio />
+        <Milestone />
+        <Studio />
+        <Fav />
+        <Cthree />
+        <ContactCta />
+        <Footer />
+      </motion.div>
     </div>
   );
 };

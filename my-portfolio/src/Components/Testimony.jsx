@@ -35,7 +35,7 @@ export default function Testimony() {
   useNavbarAlignment();
 
   return (
-    <section className="relative w-full bg-[#0d0e0f] text-white py-20 sm:py-28 lg:py-36 border-t border-white overflow-hidden">
+    <section className="relative w-full bg-white dark:bg-[#0d0e0f] text-black dark:text-white py-20 sm:py-28 lg:py-36 border-t border-black dark:border-white overflow-hidden">
       {/* Floating Title */}
       <h2 className="absolute top-6 left-4 sm:left-6 md:left- lg:left-5 text-2xl sm:text-4xl md:text-5xl font-serif font-semibold tracking-tight">
         TESTIMONIALS
@@ -76,7 +76,7 @@ export default function Testimony() {
             <p className="mt-6 font-semibold text-lg sm:text-xl md:text-2xl lg:text-[26px]">
               {testimonials[index].name}
             </p>
-            <p className="text-sm sm:text-base md:text-lg text-gray-300">
+            <p className="text-sm sm:text-base md:text-lg text-black dark:text-gray-300">
               {testimonials[index].role}
             </p>
           </motion.div>
@@ -91,7 +91,7 @@ export default function Testimony() {
             onClick={() => setIndex(i)}
             className={`text-sm sm:text-base transition-all duration-300 ${
               i === index
-                ? "underline font-semibold text-white"
+                ? "underline font-semibold text-black dark:text-white"
                 : "text-gray-500 hover:text-gray-300"
             }`}
           >

@@ -9,6 +9,7 @@ import servicesImg from "../assets/stud.jpg";
 import profileImg from "../assets/GlaS.jpg";
 import labImg from "../assets/wire.jpg";
 import contactImg from "../assets/trp.jpg";
+import { useTheme } from "../Context/useTheme";
 
 const menuItems = [
   { label: "WORK", img: workImg, path: "/work" },
@@ -31,10 +32,20 @@ const Navbar = ({
   const navigate = useNavigate();
   const location = useLocation();
   const [isDark, setIsDark] = useState(true);
+  const { state, dispatch } = useTheme()
 
-  const { navbarStyles, setDarkNavbar } = useNavbar();
+const {
+  navbarBackground,
+  isTransparentOverDark,
+  setDarkNavbar,
+  setTransparentNavbar,
+  setMidDarkNavbar,
+} = useNavbar();
 
-  const toggleTheme = () => setIsDark((prev) => !prev);
+
+
+
+  // const toggleTheme = () => setIsDark((prev) => !prev);
 
 
   useEffect(() => {
@@ -50,40 +61,75 @@ const Navbar = ({
     }
   }, [location.pathname]);
 
+  
 
-  useEffect(() => {
-    if (location.pathname === "/menu") {
-      setMenuOpen(true);
-    } else {
-      setMenuOpen(false);
-    }
+
+ useEffect(() => {
+    setMenuOpen(location.pathname === "/menu");
   }, [location.pathname]);
 
-  const toggleMenu = () => {
-    if (!menuOpen) {
-      navigate("/menu");
+  const closeMenuSafely = () => {
+    if (window.history.state && window.history.state.idx > 0) {
+      navigate(-1);
     } else {
-      if (window.history.state && window.history.state.idx > 0) {
-        navigate(-1);
-      } else {
-        navigate("/");
-      }
+      navigate("/", { replace: true });
     }
   };
+
+  const handleToggleTheme = () => {
+    dispatch({ type: "CHANGE_THEME" });
+  };
+
+  // const navBgClass =
+  // navbarBackground === "dark" ? "bg-[#0d0ef]" : "bg-transparent";
+
+ // derive background class
+const navBgClass =
+  location.pathname === "/contact"
+    ? "bg-[#0d0e0f]"
+    : navbarBackground === "dark"
+    ? "bg-[#0d0e0f]"
+    : navbarBackground === "midDark"
+    ? "bg-[#121314]"
+    : "bg-transparent";
+
+
+    // derive text color class
+
+const isNavTextWhite =
+  state.theme === "dark" ||
+  navbarBackground === "dark" ||
+  navbarBackground === "midDark" ||
+  (navbarBackground === "transparent" && !menuOpen && state.theme === "light");
+
+const navTextColor = isNavTextWhite ? "text-white" : "text-black";
+const navBarIconColor = isNavTextWhite ? "bg-white" : "bg-black";
+
+
+
+
+
+
+
 
   return (
     <>
       {/* Top Navbar */}
-      <nav
-        className={`fixed top-0 w-full flex justify-between items-center px-3 sm:px-3 py-4 sm:py-6
-          text-base font-semibold z-[400] transition-colors duration-500 overflow-hidden
-           ${location.pathname === "/contact" ? "bg-[#0d0e0f]" : navbarStyles.background}`}
-      >
+   <nav
+     className={`
+    fixed top-0 w-full flex justify-between items-center 
+    px-3 sm:px-3 py-4 sm:py-6
+    text-base font-semibold z-[400] transition-colors duration-500 overflow-hidden
+    ${navBgClass} ${navTextColor}
+  `}
+>
         {/* Left: Menu Button */}
         <button
           aria-label={menuOpen ? "Close menu" : "Open menu"}
-          onClick={toggleMenu}
-          className="flex items-center gap-2 sm:gap-3 cursor-pointer"
+          onClick={() => 
+            menuOpen ? closeMenuSafely() : navigate("/menu")
+          }
+          className="flex items-center gap-2 sm:gap-3 cursor-pointer btn-navbar"
         >
           <div className="relative w-7 sm:w-8 h-4 flex items-center justify-center">
             <motion.span
@@ -96,7 +142,7 @@ const Navbar = ({
                 y: { duration: 0.45, ease: "easeInOut", delay: menuOpen ? 0 : 0.3 },
                 rotate: { duration: 0.45, ease: "easeInOut", delay: menuOpen ? 0.3 : 0 },
               }}
-              className="absolute left-[6%] sm:left-1/4 -translate-x-1/2 w-6 h-[2px] bg-white rounded"
+              className={`absolute  left-[6%] sm:left-1/4 -translate-x-1/2 w-6 h-[2px] rounded ${navBarIconColor}`}
             />
             <motion.span
               initial={false}
@@ -108,7 +154,7 @@ const Navbar = ({
                 y: { duration: 0.45, ease: "easeInOut", delay: menuOpen ? 0 : 0.3 },
                 rotate: { duration: 0.45, ease: "easeInOut", delay: menuOpen ? 0.3 : 0 },
               }}
-              className="absolute left-[6%] sm:left-1/4 -translate-x-1/2 w-6 h-[3px] bg-white rounded"
+              className={` absolute left-[6%]  sm:left-1/4 -translate-x-1/2 w-6 h-[3px] rounded ${navBarIconColor}`}
             />
           </div>
 
@@ -118,7 +164,7 @@ const Navbar = ({
               initial={false}
               animate={{ opacity: menuOpen ? 0 : 1, x: menuOpen ? -6 : 0 }}
               transition={{ duration: 0.25 }}
-              className="text-[1.125rem] sm:text-[1.325rem] font-suisse font-thin hover:underline underline-offset-4"
+              className={`text-[1.125rem] sm:text-[1.325rem]  font-suisse font-thin hover:underline underline-offset-4 ${navTextColor}`}
             >
               Menu
             </motion.span>
@@ -126,7 +172,7 @@ const Navbar = ({
               initial={false}
               animate={{ opacity: menuOpen ? 1 : 0, x: menuOpen ? 0 : 6 }}
               transition={{ duration: 0.25 }}
-              className="text-[1.125rem] sm:text-[1.325rem] font-suisse font-thin absolute left-0 top-0 hover:underline underline-offset-2"
+              className={`text-[1.125rem] sm:text-[1.325rem]  font-suisse font-thin absolute left-0 top-0 hover:underline underline-offset-2 ${navTextColor}`}
               aria-hidden={menuOpen ? "false" : "true"}
             >
               Close
@@ -135,7 +181,7 @@ const Navbar = ({
         </button>
 
         {/* Center: Logo */}
-        <span className="text-2xl sm:text-2xl md:text-3xl tracking-widest text-center mx-auto">
+        <span className={`text-2xl  sm:text-2xl md:text-3xl tracking-widest text-center mx-auto ${navTextColor}`}>
           JINAD STEFAN
         </span>
 
@@ -148,14 +194,14 @@ const Navbar = ({
                   if (isLockedModalOpen) setIsLockedModalOpenFromNav(false);
                   else if (overlayOpen) setOverlayOpen(false);
                 }}
-                className="text-[1.125rem] sm:text-[1.325rem] font-suisse font-thin hover:underline underline-offset-4 mt-1"
+                className={`text-[1.125rem]  dark:text-white sm:text-[1.325rem] font-suisse font-thin hover:underline underline-offset-4 mt-1 ${navTextColor}`}
               >
                 Close X
               </button>
             ) : (
               <Link
                 to="/contact"
-                className="text-[1.125rem] sm:text-[1.325rem] font-suisse font-medium hover:underline underline-offset-4 mr-1"
+                className={`text-[1.125rem] sm:text-[1.325rem]  font-suisse font-medium hover:underline underline-offset-4 mr-1 ${navTextColor}`}
               >
                 Contact
               </Link>
@@ -170,7 +216,7 @@ const Navbar = ({
                   if (isLockedModalOpen) setIsLockedModalOpenFromNav(false);
                   else if (overlayOpen) setOverlayOpen(false);
                 }}
-                className="text-[1.125rem] font-suisse font-thin hover:underline underline-offset-4 mr-1"
+                className={`text-[1.125rem]  font-suisse font-thin hover:underline underline-offset-4 mr-1 ${navTextColor}`}
               >
                 X
               </button>
@@ -189,7 +235,7 @@ const Navbar = ({
             exit={{ opacity: 0, y: 20, scale: 0.98 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
             // ✅ FIXED: force solid background color
-            className="fixed inset-0 z-[300] bg-[#0d0e0f] text-white overflow-hidden"
+            className="fixed inset-0 z-[300]  bg-white dark:bg-[#0d0e0f] dark:text-white text-black overflow-hidden"
           >
             <div className="flex flex-col lg:flex-row h-full w-full px-4 sm:px-6">
               {/* Left: Menu Links */}
@@ -253,10 +299,10 @@ const Navbar = ({
               <div>&copy; 2025 Jinad Stefan</div>
               <div className="flex items-center gap-2">
                 <button
-                  onClick={toggleTheme}
+                  onClick={handleToggleTheme}
                   className="px-2 py-1 border-white/20 rounded hover:bg-white/5"
                 >
-                  Theme: {isDark ? "dark" : "light"}
+                  Theme:{state.theme}
                 </button>
                 <a className="hover:underline" href="https://www.instagram.com/jinad.stefan/" target="_blank" rel="noreferrer">
                   Instagram,
@@ -274,4 +320,3 @@ const Navbar = ({
 };
 
 export default Navbar;
-

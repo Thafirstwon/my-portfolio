@@ -13,8 +13,8 @@ const Solo = () => {
   }, []);
 
   return (
-    <div>
-      <div className="bg-[#0d0e0f] text-white min-h-screen overflow-hidden px-3.5">
+    <div className="bg-white dark:bg-[#0d0e0f] text-black dark:text-white min-h-screen overflow-hidden">
+      <div className="min-h-screen px-3 sm:px-5 lg:px-5 py-20 overflow-hidden">>
         <div className="mb-24">
           {/* Image Section */}
           <div className="flex justify-end">
@@ -35,11 +35,11 @@ const Solo = () => {
               {/* Border box under the image */}
               <div className="w-[88%] mx-auto h-[26px] relative">
                 {/* Bottom line */}
-                <div className="absolute bottom-0 left-0 right-0 border-b border-gray-400"></div>
+                <div className="absolute bottom-0 left-0 right-0 border-b border-black dark:border-gray-400"></div>
                 {/* Left vertical line */}
-                <div className="absolute bottom-0 left-0 h-full border-l border-gray-400"></div>
+                <div className="absolute bottom-0 left-0 h-full border-l border-black dark:border-gray-400"></div>
                 {/* Right vertical line */}
-                <div className="absolute bottom-0 right-0 h-full border-r border-gray-400"></div>
+                <div className="absolute bottom-0 right-0 h-full border-r border-black dark:border-gray-400"></div>
               </div>
             </div>
           </div>
@@ -51,7 +51,7 @@ const Solo = () => {
         </div>
 
         {/* Divider */}
-        <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-white"></div>
+        <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-black dark:border-white"></div>
 
         {/* Update Info */}
         <div className="flex flex-col md:flex-row justify-between items-start mb-44 mt-5">

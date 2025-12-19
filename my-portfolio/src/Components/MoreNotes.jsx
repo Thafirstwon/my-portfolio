@@ -27,11 +27,11 @@ const projects = [
 
 const MoreNotes = () => {
   return (
-    <div className="mt-28 overflow-hidden">
-      <div className="py-16 px-4 pb-44 bg-[#0d0e0f] text-white">
+    <div className=" overflow-hidden">
+      <div className="py-16 px-4 pb-44 bg-white dark:bg-[#0d0e0f] text-black dark:text-white">
         <div className="mx-auto">
           {/* Top Border */}
-          <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-white mb-6"></div>
+          <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-black dark:border-white mb-6"></div>
 
           {/* Left Heading */}
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[66px] font-serif mb-8">
@@ -98,7 +98,7 @@ const MoreNotes = () => {
       </div>
 
       {/* Bottom Border */}
-      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-white mb-4"></div>
+      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-black dark:border-white mb-4"></div>
     </div>
   );
 };

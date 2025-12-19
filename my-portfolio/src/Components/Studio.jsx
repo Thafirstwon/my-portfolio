@@ -7,7 +7,7 @@ import img5 from "../assets/sets.jpg"; // bottom row right
 
 const Studio = () => {
   return (
-    <section className="bg-[#0d0e0f] text-white overflow-hidden">
+    <section className="bg-white dark:bg-[#0d0e0f] text-black dark:text-white overflow-hidden">
       {/* Top border */}
       
 
@@ -25,7 +25,7 @@ const Studio = () => {
             STUDIO
           </h2>
 
-          <p className="col-span-12 md:col-span-9 text-base sm:text-lg md:text-xl leading-relaxed font-medium text-gray-300 mt-4 md:mt-2">
+          <p className="col-span-12 md:col-span-9 text-base sm:text-lg md:text-xl leading-relaxed font-medium text-black dark:text-gray-300 mt-4 md:mt-2">
 
         My home studio is where most of the work happens — calm, creative, and set up for collaboration. It’s got everything I need, and maybe too much comfort… it’s getting harder to leave.
           </p>

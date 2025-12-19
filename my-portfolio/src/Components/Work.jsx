@@ -26,7 +26,7 @@ const works = [
 
 const Work = () => {
   return (
-    <div className="bg-[#0d0e0f] text-white px-[19px] sm:px-5 py-4 overflow-hidden">
+    <div className="bg-white dark:bg-[#0d0e0f] text-black dark:text-white px-[19px] sm:px-5 py-4 overflow-hidden border-t border-black dark:border-white">
       {/* Section Header */}
       <div className="flex flex-row justify-between item-center mb-10">
         <h2 className="text-3xl sm:text-5xl font-serif font-bold mt-3">Work</h2>
@@ -53,7 +53,7 @@ const Work = () => {
                   <p className="mt-2 font-semibold group-hover:underline decoration-[1px]">
                     {work.title},
                   </p>
-                  <p className="text-sm text-gray-300 group-hover:underline decoration-[1px]">
+                  <p className="text-sm text-black  dark:text-gray-300 group-hover:underline decoration-[1px]">
                     {work.description}
                   </p>
                 </a>
@@ -79,7 +79,7 @@ const Work = () => {
                   <p className="mt-2 font-semibold group-hover:underline decoration-[1px]">
                     {work.title},
                   </p>
-                  <p className="text-sm text-gray-300 group-hover:underline decoration-[1px]">
+                  <p className="text-sm text-black dark:text-gray-300 group-hover:underline decoration-[1px]">
                     {work.description}
                   </p>
                 </a>
@@ -87,9 +87,6 @@ const Work = () => {
             ))}
         </div>
       </div>
-
-      {/* Full width bottom border */}
-      <div className="border-t border-white -mx-4 sm:-mx-6"></div>
     </div>
   );
 };

@@ -16,7 +16,7 @@ const Mozart = () => {
 
   return (
       <div>
-    <div className='bg-[#0d0e0f] text-white min-h-screen px-4 py-20 overflow-hidden'>
+    <div className='bg-white dark:bg-[#0d0e0f] text-black dark:text-white min-h-screen px-4 py-20 overflow-hidden'>
       <div className='mb-24'>
             <div className='flex justify-end'>
               <div className='relative flex flex-col items-center mt-10 sm:mt-10'>
@@ -33,9 +33,9 @@ const Mozart = () => {
             lg:h-[650px]"
                   />
                   <div className='w-[88%] mx-auto h-[26px] relative'>
-                    <div className='absolute bottom-0 left-0 right-0 border-b border-gray-400'></div>
-                    <div className='absolute bottom-0 left-0 h-full border-l border-gray-400'></div>
-                    <div className='absolute bottom-0 right-0 h-full border-r border-gray-400'></div>
+                    <div className='absolute bottom-0 left-0 right-0 border-b border-black dark:border-gray-400'></div>
+                    <div className='absolute bottom-0 left-0 h-full border-l border-black dark:border-gray-400'></div>
+                    <div className='absolute bottom-0 right-0 h-full border-r border-black dark:border-gray-400'></div>
                   </div>
 
                   </div>
@@ -45,7 +45,7 @@ const Mozart = () => {
             </h1>
       </div>
 
-      <div className='relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-white'></div>
+      <div className='relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-black dark:border-white'></div>
 
       <div className='flex flex-col md:flex-row justify-between items-start mb-44 mt-5'>
             <p className='text-[27.5px]  mb-4 md:mb-0'>
@@ -57,10 +57,10 @@ const Mozart = () => {
       </div>
 
      
-     <div className='relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-white pb-44'></div>
+     <div className='relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-black  dark:border-white pb-44'></div>
 
     <div className="flex flex-col items-center text-center">
-      <p className="text-gray-400 text-xl -mt-36">Link</p>
+      <p className="text-black dark:text-gray-400 text-xl -mt-36">Link</p>
 
       {/* group wrapper */}
       <motion.div
@@ -72,7 +72,7 @@ const Mozart = () => {
   href="http://mosesadegunle.com"
   target="_blank"
   rel="noopener noreferrer"
-  className="relative transition-all duration-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[1px] after:bg-white group-hover:after:w-full after:transition-all after:duration-300"
+  className="relative transition-all duration-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[1px] after:bg-black dark:after:bg-white group-hover:after:w-full after:transition-all after:duration-300"
 >
   mosesadegunle.com
 </a>

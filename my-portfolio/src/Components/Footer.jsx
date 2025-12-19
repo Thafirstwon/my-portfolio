@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export default function Footer() {
   return (
     <motion.footer
-      className="bg-[#0d0e0f] text-white flex flex-col justify-between min-h-[85vh] md:min-h-screen"
+      className=" bg-[#0d0e0f] text-white flex flex-col justify-between min-h-[85vh] md:min-h-screen"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.2, ease: "easeOut" }}

@@ -39,11 +39,11 @@ const Design = () => {
   };
 
   return (
-    <section className="bg-[#0d0e0f] text-white overflow-hidden relative">
+    <section className="bg-white dark:bg-[#0d0e0f] text-black dark:text-white overflow-hidden relative border-t border-black dark:border-white">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-3.5 sm:px-5 lg:px-5 py-6 sm:py-16 lg:py-8">
         {/* Left: Text */}
         <div className="flex flex-col justify-start">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif mb-4 tracking-tight font-semibold">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif mb-6 tracking-tight font-semibold">
             SERVICES
           </h2>
 
@@ -52,13 +52,13 @@ const Design = () => {
             whether solo or with trusted teammates, I help brands turn complexity into clarity.
           </p>
 
-          <ul className="space-y-2 sm:space-y-3 mt-6 sm:mt-8 ml-1 sm:ml-0">
+          <ul className="space-y-2 sm:space-y-3 mt-6 sm:mt-4 ml-1 sm:ml-0">
             {skills.map((skill, index) => (
               <li
                 key={index}
                 className="flex items-center gap-3 text-base sm:text-lg md:text-xl lg:text-[24px] font-normal"
               >
-                <span className="w-1.5 h-1.5 bg-white flex-shrink-0"></span>
+                <span className="w-1.5 h-1.5 bg-black dark:bg-white flex-shrink-0"></span>
                 <span>{skill}</span>
               </li>
             ))}
@@ -77,7 +77,7 @@ const Design = () => {
 
           {/* Image slider */}
           <div
-            className="relative w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl h-56 sm:h-72 md:h-[550px] lg:h-[750px] overflow-hidden shadow-lg rounded-sm"
+            className="relative w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl h-56 sm:h-72 md:h-[550px] lg:h-[750px] overflow-hidden shadow-lg rounded-sm mt-4"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
@@ -125,123 +125,10 @@ const Design = () => {
         </div>
       </div>
 
-      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-white mt-28"></div>
+      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-black dark:border-white mt-28"></div>
+
     </section>
   );
 };
 
 export default Design;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useEffect, useState } from "react";
-// import { motion } from "framer-motion";
-// import { ChevronLeft, ChevronRight } from "lucide-react";
-
-// const images = ["/solo.png", "/multi.jpg", "/Mozart[1].jpg"];
-
-// const ServicesSection = () => {
-//   const [current, setCurrent] = useState(0);
-
-//   // Auto-play
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setCurrent((prev) => (prev + 1) % images.length);
-//     }, 5000);
-//     return () => clearInterval(interval);
-//   }, []);
-
-//   const prev = () => setCurrent((p) => (p - 1 + images.length) % images.length);
-//   const next = () => setCurrent((p) => (p + 1) % images.length);
-
-//   return (
-//     <section className="bg-[#0d0e0f] text-white border-b border-white px-4 sm:px-5 py-2 sm:py-16 md:py-5 md:pb-44 overflow-hidden side-nudge ">
-//       <div className="grid md:grid-cols-2 gap-8">
-//         {/* Left: Text */}
-//         <div>
-//           <h2 className="text-3xl sm:text-4xl md:text-5xl mb-5 font-serif font-bold flex sm:block justify-between items-center md:-ml-0 ml-1">
-//             SERVICES
-//             <a
-//               href="/services"
-//               className="text-sm sm:hidden underline decoration-[1px] font-semibold decoration-white hover:decoration-gray-400 transition whitespace-nowrap"
-//             >
-//               Discover
-//             </a>
-//           </h2>
-//           <p className="text-gray-200 font-semibold leading-relaxed max-w-4xl text-base sm:text-lg md:text-[22px]">
-//             From strategy & design systems to Development & creative direction,
-//             whether <br className="hidden sm:block" /> solo or with trusted
-//             teammates, I help brands turn complexity into clarity.
-//           </p>
-//         </div>
-
-//         {/* Right: Image + controls */}
-//         <div className="flex flex-col items-center mt-10 md:mt-0 sm:-mr-52">
-//           {/* Discover */}
-//           <div className="w-full max-w-md flex justify-end md:mr-[-197px] mb-8 sm:mb-10 sm:flex">
-//             <a
-//               href="/services"
-//               className="hidden sm:flex text-base sm:text-lg underline decoration-[1px] font-semibold decoration-white hover:decoration-gray-400 transition"
-//             >
-//               Discover my services
-//             </a>
-//           </div>
-
-//           {/* Image */}
-//           <div className="relative w-full max-w-sm sm:max-w-md md:max-w-lg h-[350px] sm:h-[450px] md:h-[650px] overflow-hidden shadow-lg md:ml-32 rounded-sm">
-//             {images.map((src, i) => (
-//               <motion.img
-//                 key={i}
-//                 src={src}
-//                 alt={`Service ${i + 1}`}
-//                 initial={{ opacity: 0 }}
-//                 animate={{ opacity: i === current ? 1 : 0 }}
-//                 transition={{ duration: 1.0, ease: "easeInOut" }}
-//                 className="absolute inset-0 w-full h-full object-cover"
-//                 style={{ zIndex: i === current ? 1 : 0 }}
-//               />
-//             ))}
-//           </div>
-
-//           {/* Counter + Arrows */}
-//           <div className="w-full max-w-sm sm:max-w-xl mt-4 flex items-center justify-between px-2 sm:px-0">
-//             <span className="text-xs sm:text-xl text-gray-50 tracking-wide ml-2 sm:ml-8 md:ml-32">
-//               {current + 1}/{images.length}
-//             </span>
-//             <div className="flex gap-3 sm:gap-4 -mr-7">
-//               <button
-//                 onClick={prev}
-//                 className="p-1 sm:p-2 hover:text-gray-300 transition"
-//                 aria-label="Previous"
-//               >
-//                 <ChevronLeft size={20} />
-//               </button>
-//               <button
-//                 onClick={next}
-//                 className="p-1 sm:p-2 hover:text-gray-300 transition "
-//                 aria-label="Next"
-//               >
-//                 <ChevronRight size={20} />
-//               </button>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default ServicesSection;

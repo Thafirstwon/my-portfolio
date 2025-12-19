@@ -5,18 +5,19 @@ import { useNavbar } from "../Context/NavbarContext";
 import { useNavbarAlignment } from "./useNavbarAlignment";
 
 const Bio = () => {
-  const { setNavbarStyles } = useNavbar();
-  const [showMore, setShowMore] = useState(false)
+  const { setDarkNavbar } = useNavbar();
+  const [showMore, setShowMore] = useState(false);
 
   // Navbar tweak
   useEffect(() => {
-    setNavbarStyles({ background: "black" });
-  }, [setNavbarStyles]);
+    // Bio section is dark background → use dark navbar
+    setDarkNavbar();
+  }, [setDarkNavbar]);
 
   useNavbarAlignment();
 
   return (
-    <section className="bg-[#0d0e0f] text-white overflow-x-hidden border-t border-white">
+    <section className="bg-white dark:bg-[#0d0e0f] text-black dark:text-white  overflow-x-hidden border-t border-b border-black dark:border-white">
       <div
         className="
           w-full
@@ -25,7 +26,6 @@ const Bio = () => {
         "
       >
         {/* Title */} 
-        {/* text-6xl md:text-7xl font-serif uppercase mb-12 -ml-2 sm:-ml-4 md:-ml-6 lg:-ml-8" */}
         <h2
           className="
             text-5xl sm:text-6xl md:text-7xl font-serif uppercase
@@ -35,15 +35,15 @@ const Bio = () => {
           BIO
         </h2>
 
-        {/* Bio text aligned right */}
+        {/* Bio Text */}
         <div className="flex justify-end">
           <div
             className="
               w-full 
-    max-w-[525px] lg:max-w-[1050px] 
-    space-y-6 md:space-y-8
-    text-base sm:text-lg md:text-xl
-    leading-relaxed font-suisse
+              max-w-[525px] lg:max-w-[1050px] 
+              space-y-6 md:space-y-8
+              text-base sm:text-lg md:text-xl
+              leading-relaxed font-suisse
             "
           >
             <p>
@@ -64,10 +64,10 @@ const Bio = () => {
               Since then, I’ve kept {" "}
               {!showMore && (
                 <button
-                onClick={() => setShowMore(true)}
-                className="text-sm md:text-base font-medium text-gray-400 hover:text-white transition"
+                  onClick={() => setShowMore(true)}
+                  className="text-sm md:text-base font-medium dark:text-gray-400 hover:text-black dark:hover:text-white transition"
                 >
-                  <span className="text-white text-xl">...</span> Show More
+                  <span className="text-black dark:text-white text-xl">...</span> Show More
                 </button>
               )}
               {showMore && (
@@ -78,8 +78,8 @@ const Bio = () => {
               digital experiences that bridge ideas and technology. This is what
               I do. And I love it.{" "}
               <button
-              onClick={() => setShowMore(false)}
-              className="text-sm md:text-base font-medium text-gray-400 hover:text-white transition underline underline-offset-2"
+                onClick={() => setShowMore(false)}
+                className="text-sm md:text-base font-medium text-black dark:text-gray-400 hover:text-black dark:hover:text-white transition underline underline-offset-2"
               >
                 Show Less
               </button>
@@ -96,11 +96,7 @@ const Bio = () => {
             mt-16 md:mt-24
           "
         >
-          <div
-            className="
-              flex-1 min-w-[160px] max-w-[420px] md:max-w-[520px]
-            "
-          >
+          <div className="flex-1 min-w-[160px] max-w-[420px] md:max-w-[520px]">
             <img
               src={img1}
               alt="bio-img-1"
@@ -108,11 +104,7 @@ const Bio = () => {
             />
           </div>
 
-          <div
-            className="
-              flex-1 min-w-[160px] max-w-[420px] md:max-w-[520px]
-            "
-          >
+          <div className="flex-1 min-w-[160px] max-w-[420px] md:max-w-[520px]">
             <img
               src={img2}
               alt="bio-img-2"

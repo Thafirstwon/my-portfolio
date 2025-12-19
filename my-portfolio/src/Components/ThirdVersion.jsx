@@ -8,7 +8,7 @@ const ThirdVersion = () => {
   ];
 
   return (
-  <section className="bg-[#0d0e0f] text-white border-b border-white overflow-hidden">
+  <section className="bg-white dark:bg-[#0d0e0f] text-black dark:text-white border-b border-black dark:border-white overflow-hidden">
       <div className="w-full px-4 md:px-5 pt-6 md:pt-6 pb-16 md:pb-44">
         {/* 
           On mobile: flex-row scrollable horizontally 
@@ -22,7 +22,7 @@ const ThirdVersion = () => {
               className="flex-shrink-0 md:flex-shrink md:flex md:flex-col items-start text-left space-y-4 group snap-center w-[97%] sm:w-[70%] md:w-auto"
             >
               {/* Title */}
-              <h2 className="text-4xl md:text-5xl font-serif uppercase hover:underline decoration-white decoration-[1px] underline-offset-8 mb-4">
+              <h2 className="text-4xl md:text-5xl font-serif uppercase hover:underline dark:decoration-white decoration-black decoration-[1px] underline-offset-8 mb-4">
                 {item.title}
               </h2>
 

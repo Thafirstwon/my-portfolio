@@ -12,6 +12,7 @@ import { useNavbar } from "../Context/NavbarContext";
 import ContactCta from "./ContactCta";
 import Footer from "./Footer";
 import { useNavbarAlignment } from "./useNavbarAlignment";
+import { useTheme } from "../Context/useTheme";
 
 const Work = ({
   isLockedModalOpen,
@@ -25,15 +26,29 @@ const Work = ({
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [showError, setShowError] = useState(false);
-  const { setNavbarStyles } = useNavbar();
+   const { state, dispatch } = useTheme()
 
-  useEffect(() => {
-    setNavbarStyles({
-      background: "bg-[#0d0e0f]",
-      text: "text-white",
-    });
-    return () => setNavbarStyles({ background: "bg-transparent" }); // ✅ Proper cleanup
-  }, [setNavbarStyles]);
+    const {
+    setTransparentNavbar,
+    setDarkNavbar,
+    navbarBackground, // needed for text logic if required
+    menuOpen,         // needed for text logic if required
+  } = useNavbar();
+
+    useEffect(() => {
+    setDarkNavbar();
+  }, [setDarkNavbar]);
+
+
+   const isNavTextWhite =
+    state.theme === "dark" ||
+    navbarBackground === "dark" ||
+    navbarBackground === "midDark";
+
+  const navTextColor = isNavTextWhite ? "text-white" : "text-black";
+
+
+
 
   useNavbarAlignment();
 
@@ -159,10 +174,10 @@ const Work = ({
   };
 
   return (
-    <section className="bg-[#0d0e0f] text-white overflow-hidden">
+    <section className="bg-white dark:bg-[#0d0e0f] text-black dark:text-white overflow-hidden">
       {/* Header */}
       <div className="w-full py-2 pt-48">
-        <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-white mb-5"></div>
+        <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-b border-black dark:border-white mb-5"></div>
 
         <h1 className="text-6xl md:text-7xl font-serif uppercase mb-20 text-center">
           WORK
@@ -211,7 +226,7 @@ const Work = ({
       </div>
 
       {filtersOpen && (
-        <div className="max-w-[1858px] mx-auto border-t border-white"></div>
+        <div className="max-w-[1858px] mx-auto border-t border-b border-black dark:border-white"></div>
       )}
 
       <div className="p-4">
@@ -243,9 +258,9 @@ const Work = ({
                         }}
                         className="flex items-center gap-3 text-[1.25rem] font-medium text-left hover:text-gray-300 whitespace-nowrap"
                       >
-                        <span className="relative w-5 h-5 border flex-shrink-0 border-white">
+                        <span className="relative w-5 h-5 border flex-shrink-0  border-black dark:border-white">
                           {selectedFilter.includes(s) && (
-                            <span className="absolute inset-[5px] bg-white"></span>
+                            <span className="absolute inset-[5px] bg-black dark:bg-white"></span>
                           )}
                         </span>
                         <span>{s}</span>
@@ -272,9 +287,9 @@ const Work = ({
                         }}
                         className="flex items-center gap-3 text-[1.25rem] font-medium text-left hover:text-gray-300 whitespace-nowrap"
                       >
-                        <span className="relative w-5 h-5 border flex-shrink-0 border-white">
+                        <span className="relative w-5 h-5 border flex-shrink-0 border-black dark:border-white">
                           {selectedFilter.includes(d) && (
-                            <span className="absolute inset-[5px] bg-white"></span>
+                            <span className="absolute inset-[5px] bg-black dark:bg-white"></span>
                           )}
                         </span>
                         <span>{d}</span>
@@ -313,7 +328,7 @@ const Work = ({
               ))}
             </div>
           ) : (
-            <div className="max-w-7xl mx-auto p-12 text-center border rounded-md border-white/5">
+            <div className="max-w-7xl mx-auto p-12 text-center border rounded-md border-b border-black dark:border-white">
               <p className="text-lg mb-4">
                 Sorry, no project found matching these filters
               </p>
@@ -355,8 +370,8 @@ const Work = ({
 
       {/* Locked Modal */}
       {isLockedModalOpen && selectedProject && (
-        <div className="fixed inset-0 bg-[#0d0e0f] flex flex-col items-center justify-start z-40 pt-32 overflow-hidden">
-          <div className="w-screen border-t border-white"></div>
+        <div className="fixed inset-0 bg-white dark:bg-[#0d0e0f] text-black dark:text-white  flex flex-col items-center justify-start z-40 pt-32 overflow-hidden">
+          <div className="w-screen border-t  border-black dark:border-white"></div>
           <div className="max-w-7xl w-full px-4">
             <div className="pt-8 flex flex-col md:flex-row gap-12">
               <div className="md:w-1/2">
@@ -375,7 +390,7 @@ const Work = ({
                     placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="flex-grow bg-transparent border-b border-white focus:outline-none focus:border-white/80 text-white py-2 w-full"
+                    className="flex-grow bg-transparent border-b border-black dark:border-white focus:outline-none focus:border-black dark:focus:border-white/80 text-black dark:text-white py-2 w-full"
                   />
                   <button
                     type="submit"
@@ -406,7 +421,7 @@ const Work = ({
           </div>
 
           {showError && (
-            <div className="fixed bottom-0 left-0 w-full bg-white text-black text-center py-3 text-sm tracking-wide">
+            <div className="fixed bottom-0 left-0 w-full bg-white dark:bg-[#0d0e0f] text-black dark:text-white text-center py-3 text-sm tracking-wide">
               Sorry, wrong password. Please{" "}
               <Link
                 to="/contact"
@@ -429,7 +444,7 @@ const Work = ({
         `}
       </style>
 
-      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-white mt-36 mb-12"></div>
+      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-white dark:bg-[#0d0e0f] text-black dark:text-white mt-36 mb-12"></div>
 
       <ContactCta />
       <Footer />

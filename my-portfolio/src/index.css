@@ -4,6 +4,14 @@
 @tailwind utilities;
 
 
+/* ⭐ Enable dark mode variant generation */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* global.css */
+.btn-navbar {
+  @apply text-black dark:text-white;
+} 
+
 
 /* ========== Scrollbar Styling (Chrome, Edge, Safari) ========== */
 ::-webkit-scrollbar {
@@ -294,7 +302,40 @@ body,
   margin: 0;
   padding: 0;
   min-height: 100%;
-  scroll-behavior: auto;
+  scroll-behavior: auto; 
+ } 
+
+
+/* theme light */
+ html.dark {
+  --bg-color: #0d0e0f;
+  --text-color: #ffffff;
+  --link-color: #fff;
 }
 
+html.light {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --link-color: #000;
+}
+
+/* sample usage */
+/* body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+nav {
+  background-color: var(--nav-bg);
+  color: var(--text-color);
+}
+
+a {
+  color: var(--link-color);
+}
+
+html,
+body {
+  transition: background-color 0.3s, color 0.3s;
+} */
 

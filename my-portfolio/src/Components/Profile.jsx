@@ -3,14 +3,14 @@ import work from '../assets/wokspa.jpg'
 
 const Profile = () => {
   return (
-    <section className="relative bg-[#0d0e0f] text-white border-b border-white overflow-hidden">
+    <section className="relative bg-white dark:bg-[#0d0e0f] text-black dark:text-white border-b border-white overflow-hidden">
       {/* Top Bar */}
       <div
         className="
           absolute top-0 left-0 w-full z-10 
           flex flex-row justify-between items-center
           px-3 sm:px-6 md:px-8 pt-4 sm:pt-6
-          side-nudge
+          side-nudge text-white
         "
       >
         <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif font-bold tracking-wide md:-ml-3">
@@ -43,7 +43,7 @@ const Profile = () => {
             absolute bottom-6 sm:bottom-10 md:bottom-14 
             left-3 sm:left-6 md:left-8 
             max-w-[85%] sm:max-w-md md:max-w-xl
-            ml-[2px] sm:-ml-3
+            ml-[2px] sm:-ml-3 text-white
           "
         >
           <p className="text-base sm:text-lg md:text-xl leading-relaxed drop-shadow-lg">

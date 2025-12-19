@@ -39,9 +39,9 @@ const Clients = () => {
 
   
   return (
-<section className="relative bg-[#0d0e0f] text-white overflow-hidden py-16 side-nudge">
+<section className="relative bg-white dark:bg-[#0d0e0f] text-black  dark:text-white overflow-hidden py-16 side-nudge">
   {/* Full-width top border */}
-  <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-white"></div>
+  <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-black dark:borer-white"></div>
 
   {/* Content wrapper */}
   <div className="mx-auto">
@@ -61,13 +61,13 @@ const Clients = () => {
               style={{ willChange: "transform" }}
             >
               <div className="h-1/2 flex flex-col justify-start space-y-2 sm:space-y-3 pt-2 sm:pt-3">
-                <h3 className="text-xs sm:text-sm md:text-base uppercase tracking-wider text-white border-t border-white/80 pt-2 sm:pt-3">
+                <h3 className="text-xs sm:text-sm md:text-base uppercase tracking-wider text-black dark:text-white border-t border-black dark:border-white/80 pt-2 sm:pt-3">
                   {col.title}
                 </h3>
                 {col.clients.map((client, i) => (
                   <p
                     key={i}
-                    className="text-base sm:text-lg md:text-xl tracking-wide text-white"
+                    className="text-base sm:text-lg md:text-xl tracking-wide text-black dark:text-white"
                   >
                     {client}
                   </p>
@@ -79,13 +79,13 @@ const Clients = () => {
                 aria-hidden="true"
                 className="h-1/2 flex flex-col justify-start space-y-2 sm:space-y-3 pt-2 sm:pt-3"
               >
-                <h3 className="text-xs sm:text-sm md:text-base uppercase tracking-wider text-white border-t border-white/80 pt-2 sm:pt-3">
+                <h3 className="text-xs sm:text-sm md:text-base uppercase tracking-wider text-white border-t border-black dark:border-white/80 pt-2 sm:pt-3">
                   {col.title}
                 </h3>
                 {col.clients.map((client, i) => (
                   <p
                     key={i + col.clients.length}
-                    className="text-base sm:text-lg md:text-xl tracking-wide text-white"
+                    className="text-base sm:text-lg md:text-xl tracking-wide text-black dark:text-white"
                   >
                     {client}
                   </p>
@@ -99,18 +99,18 @@ const Clients = () => {
   </div>
 
   {/* Full-width bottom border */}
-  <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-white/80"></div>
+  <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-black dark:border-white/80"></div>
 
   {/* About this list */}
 {/* About this list */}
-<div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 sm:gap-20 mt-4 pr-[0.75rem] sm:pr-[1rem] md:pr-[1.5rem]">
+<div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 sm:gap-20 mt-4 pr-[0.75rem] sm:pr-[1rem] md:pr-[1.5rem] pb-40">
   <div className="w-full md:w-1/4">
-    <h3 className="font-medium text-xs sm:text-sm leading-relaxed text-gray-300 uppercase tracking-widest ml-1">
+    <h3 className="font-medium text-xs sm:text-sm leading-relaxed text-black dark:text-gray-300 uppercase tracking-widest ml-1">
       {section.title}
     </h3>
   </div>
   <div className="w-full md:w-3/4">
-    <p className="text-sm sm:text-base font-suisse text-gray-50 leading-relaxed">
+    <p className="text-sm sm:text-base font-suisse text-black dark:text-gray-50 leading-relaxed">
       {section.description}
     </p>
   </div>

@@ -45,7 +45,7 @@ const NoteDetail = () => {
   }
 
   return (
-    <div className="bg-[#0d0e0f] text-white min-h-screen px-6 py-10">
+    <div className="bg-white dark:bg-[#0d0e0f] text-black dark:text-white min-h-screen px-6 py-10">
       <div className="max-w-4xl mx-auto">
         <Link
           to="/notes"

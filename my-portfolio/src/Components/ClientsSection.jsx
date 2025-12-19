@@ -13,13 +13,12 @@ const logos = [
 // Different intervals for each logo (ms)
 const intervals = [10500, 8000, 6000, 16000, 7500, 15000];
 
-
 const LogoSlot = ({ logoSet, interval, delay }) => {
   const [index, setIndex] = useState(0);
-  const intervalRef = useRef(null); // ✅ store interval ID
+  const intervalRef = useRef(null);
 
   const startInterval = () => {
-    stopInterval(); // clear any existing one
+    stopInterval();
     intervalRef.current = setInterval(() => {
       setIndex((prev) => (prev + 1) % logoSet.length);
     }, interval);
@@ -30,11 +29,10 @@ const LogoSlot = ({ logoSet, interval, delay }) => {
   };
 
   useEffect(() => {
-    // start initial interval
     startInterval();
 
     const handleResize = () => {
-      startInterval(); // restart on resize
+      startInterval();
     };
 
     window.addEventListener("resize", handleResize);
@@ -45,7 +43,6 @@ const LogoSlot = ({ logoSet, interval, delay }) => {
     };
   }, [logoSet, interval]);
 
-  // Fade duration = 25% of the interval (max 2.5s)
   const fadeDuration = Math.min((interval / 1000) * 0.25, 2.5);
 
   return (
@@ -62,8 +59,10 @@ const LogoSlot = ({ logoSet, interval, delay }) => {
             delay,
             ease: "easeInOut",
           }}
-          className={`object-contain absolute filter brightness-0 invert ${
-            src.includes("one") ? "h-8 sm:h-16 md:h-9" : "h-16 sm:h-20 md:h-20"
+          className={`object-contain absolute filter brightness-0 dark:invert ${
+            src.includes("one")
+              ? "h-8 sm:h-16 md:h-9"
+              : "h-16 sm:h-20 md:h-20"
           }`}
         />
       ))}
@@ -73,8 +72,8 @@ const LogoSlot = ({ logoSet, interval, delay }) => {
 
 const ClientsSection = () => {
   return (
-    <section className="bg-[#0d0e0f] text-white border-b border-white pb-64">
-      <h2 className="text-3xl sm:text-5xl mb-6 sm:mb-12 font-serif font-bold p-6 md:-ml-[7px] -ml-2.5 mt-3">
+    <section className="bg-white dark:bg-[#0d0e0f] text-black dark:text-white pb-64">
+      <h2 className="text-3xl sm:text-5xl mb-6 sm:mb-12 font-serif font-bold p-6 md:-ml-[7px] -ml-2.5">
         CLIENTS
       </h2>
 
@@ -84,7 +83,7 @@ const ClientsSection = () => {
             key={i}
             logoSet={set}
             interval={intervals[i % intervals.length]}
-            delay={i * 0.3} // stagger logos (0.3s apart)
+            delay={i * 0.3}
           />
         ))}
       </div>

@@ -8,7 +8,7 @@ const About = () => {
     <section
       id="about-section"
       className="
-        bg-[#0d0e0f] text-gray-50 font-bold 
+       bg-white dark:bg-[#0d0e0f] dark:text-white text-black font-bold 
         py-20 sm:py-28 lg:py-32 
         px-4 sm:px-8 md:px-16 
         overflow-hidden
@@ -42,3 +42,19 @@ const About = () => {
 };
 
 export default About;
+
+
+
+
+
+
+
+
+//  className={`fixed top-0 w-full flex justify-between items-center px-3 sm:px-3 py-4 sm:py-6 
+//     font-semibold z-[400] transition-colors duration-500 overflow-hidden
+//     ${
+//       state.theme === "dark" ||
+//       navbarStyles.background === "bg-[#0d0e0f]" || navbarStyles.background === "bg-transparent"
+//         ? "text-white"
+//         : "text-black"
+//     } ${location.pathname === "/contact" ? "bg-[#0d0e0f]" : navbarStyles.background}`}

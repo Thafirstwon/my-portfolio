@@ -41,7 +41,8 @@ const Design = () => {
   };
 
   return (
-    <section className="bg-[#0d0e0f] text-white border-t border-white overflow-hidden">
+   <section className="bg-white dark:bg-[#0d0e0f] text-black dark:text-white border-t border-black dark:border-white overflow-hidden">
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-3.5 sm:px-5 lg:px-5 py-6 sm:py-16 lg:py-8">
         {/* Left: Text */}
         <div className="flex flex-col justify-start">

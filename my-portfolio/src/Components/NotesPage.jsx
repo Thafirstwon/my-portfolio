@@ -10,6 +10,7 @@ import { useNavbar } from "../Context/NavbarContext";
 import ContactCta from "./ContactCta";
 import Footer from "./Footer";
 import { useNavbarAlignment } from "./useNavbarAlignment";
+import ContactCta2 from "./ContactCta2";
 
 const NotesPage = () => {
   const [filtersOpen, setFiltersOpen] = useState(false);
@@ -88,13 +89,13 @@ const NotesPage = () => {
 
 
   return (
-    <section className="bg-[#0d0e0f] text-white overflow-hidden">
+    <section className="bg-white dark:bg-[#0d0e0f] text-black dark:text-white overflow-hidden">
       {/* === Header + Filters Section === */}
       <div
         className="mx-auto px-4 sm:px-6 md:px-10 pt-32 sm:pt-40 pb-0"
         style={sectionStyle}
       >
-        <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-white mt-11 sm:mt-20"></div>
+        <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-b border-black dark:border-white mt-11 sm:mt-20"></div>
 
         <h1 className="text-5xl sm:text-6xl md:text-8xl font-serif uppercase mt-8 sm:mb-12 text-center">
           NOTES
@@ -124,7 +125,7 @@ const NotesPage = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -8 }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
-                  className="absolute -top-2 left-24 bg-white/80 text-black text-xs sm:text-sm font-bold w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center shadow-md"
+                  className="absolute -top-2 left-24 bg-black dark:bg-white/80 text-black text-xs sm:text-sm font-bold w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center shadow-md"
                 >
                   {selectedFilter.length}
                 </motion.div>
@@ -143,7 +144,7 @@ const NotesPage = () => {
         </div>
       </div>
 
-      {filtersOpen && <div className="max-w-[1860px] mx-auto border-t border-white px-4 sm:px-6 md:px-10"></div>}
+      {filtersOpen && <div className="max-w-[1860px] mx-auto border-t border-black dark:border-white px-4 sm:px-6 md:px-10"></div>}
       {/* === Filter Dropdown === */}
       <AnimatePresence>
         {filtersOpen && (
@@ -155,7 +156,7 @@ const NotesPage = () => {
             className="px-4 sm:px-5 pt-4 pb-4 md:ml-3"
             style={sectionStyle}
           >
-            <h4 className="mb-4 text-base sm:text-lg font-medium text-gray-400 uppercase">
+            <h4 className="mb-4 text-base sm:text-lg font-medium text-black dark:text-gray-400 uppercase">
               Types
             </h4>
             <div className="grid grid-cols gap-3 sm:gap-4">
@@ -163,11 +164,11 @@ const NotesPage = () => {
                 <button
                   key={t}
                   onClick={() => toggleFilter(t)}
-                  className="flex items-center gap-3 text-lg sm:text-2xl font-medium text-left hover:text-gray-300"
+                  className="flex items-center gap-3 text-lg sm:text-2xl font-medium text-left hover:text-black dark:hover:text-gray-300"
                 >
-                  <span className="relative w-4 h-4 sm:w-5 sm:h-5 border flex-shrink-0 border-white">
+                  <span className="relative w-4 h-4 sm:w-5 sm:h-5 border flex-shrink-0 border-black dark:border-white">
                     {selectedFilter.includes(t) && (
-                      <span className="absolute inset-[4px] sm:inset-[5px] bg-white"></span>
+                      <span className="absolute inset-[4px] sm:inset-[5px] bg-black dark:bg-white"></span>
                     )}
                   </span>
                   <span>{t.split("—")[0].trim()}</span>
@@ -184,13 +185,13 @@ const NotesPage = () => {
         style={sectionStyle}
       >
         {selectedFilter.length > 0 && filteredProjects.length === 0 ? (
-          <div className="text-center border border-white/10 p-4 sm:p-12 rounded-sm">
+          <div className="text-center border border-black dark:border-white/10 p-4 sm:p-12 rounded-sm">
             <p className="text-base sm:text-lg mb-4">
               Sorry, no project found matching these filters.
             </p>
             <button
               onClick={() => setSelectedFilter([])}
-              className="underline underline-offset-4 decoration-white"
+              className="underline underline-offset-4 decoration-black dark:decoration-white"
             >
               Clear your filters
             </button>
@@ -211,7 +212,7 @@ const NotesPage = () => {
                 <p className="mt-4 text-2xl sm:text-[28px] font-semibold group-hover:underline decoration-white">
                   {p.title}
                 </p>
-                <p className="text-gray-100 mt-1 text-base sm:text-lg">
+                <p className="text-black dark:text-gray-100 mt-1 text-base sm:text-lg">
                   {p.categories.join(", ")}
                 </p>
               </Link>
@@ -221,8 +222,8 @@ const NotesPage = () => {
       </div>
 
       {/* === Divider + Footer === */}
-      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-white mt-16 sm:mt-28"></div>
-      <ContactCta />
+      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-black dark:border-white mt-16 sm:mt-28"></div>
+      <ContactCta2 />
       <Footer />
     </section>
   );

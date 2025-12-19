@@ -31,12 +31,13 @@ const milestones = [
 
 const Milestone = () => {
   const scrollRef = useRef(null);
-  const { setNavbarStyles } = useNavbar();
+  const { setDarkNavbar } = useNavbar();
 
   // Navbar tweak
   useEffect(() => {
-    setNavbarStyles({ background: "black" });
-  }, [setNavbarStyles]);
+    // Milestones section is dark background → dark navbar
+    setDarkNavbar();
+  }, [setDarkNavbar]);
 
   const scroll = (direction) => {
     if (scrollRef.current) {
@@ -50,7 +51,7 @@ const Milestone = () => {
   };
 
   return (
-    <section className="bg-[#0d0e0f] text-white border-t border-b border-white overflow-hidden relative">
+    <section className="bg-white dark:bg-[#0d0e0f] text-black dark:text-white border-t border-b border-black dark:border-white overflow-hidden relative">
       <div className="w-full px-5 sm:px-3 md:px-4 lg:px-5 xl:px-6 2xl:px-6 pt-6 md:pt-6 pb-16 md:pb-44 relative">
         {/* Title + arrows */}
         <div className="flex items-center justify-between mb-6">
@@ -99,7 +100,7 @@ const Milestone = () => {
                   snap-center
                 "
               >
-                <div className="border-t border-white mb-6 w-full" />
+                <div className="border-t border-b border-black dark:border-white mb-6 w-full" />
                 <h3 className="text-xl font-bold mb-4">{item.year}</h3>
 
                 <img

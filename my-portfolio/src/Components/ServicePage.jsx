@@ -9,9 +9,13 @@ import Testimony from "./Testimony";
 import ContactCta from "./ContactCta";
 import Footer from "./Footer";
 import { useNavbarAlignment } from "./useNavbarAlignment";
+import { useTheme } from "../Context/useTheme";
 
 const ServicePage = () => {
-  const { setNavbarStyles } = useNavbar();
+  const { setTransparentNavbar, setDarkNavbar } = useNavbar();
+  const { state } = useTheme();
+
+  useNavbarAlignment();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,32 +24,26 @@ const ServicePage = () => {
 
       const sectionTop = secondSection.getBoundingClientRect().top;
 
+      // When top of second section hits or passes navbar top
       if (sectionTop <= 0) {
-        setNavbarStyles({
-          background: "bg-[#0d0e0f]",
-          blur: false,
-        });
+        setDarkNavbar();
       } else {
-        setNavbarStyles({
-          background: "transparent",
-          blur: false,
-        });
+        setTransparentNavbar();
       }
     };
-
 
     window.addEventListener("scroll", handleScroll);
     handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [setNavbarStyles]);
-
-  useNavbarAlignment();
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [setTransparentNavbar, setDarkNavbar]);
 
   return (
     <div className="w-full overflow-hidden">
       {/* === Top Section === */}
-      <section className="relative bg-[#0c0f14] text-white flex items-center justify-center min-h-[90vh] sm:min-h-screen overflow-hidden px-4 sm:px-6">
+      <section className="relative bg-white dark:bg-[#0d0e0f] text-black dark:text-white flex items-center justify-center min-h-[90vh] sm:min-h-screen overflow-hidden px-4 sm:px-6">
         {/* Huge SERVICE text */}
         <h1 className="absolute bottom-2 sm:-bottom-6 z-20 text-[64px] xs:text-[90px] sm:text-[150px] md:text-[200px] lg:text-[300px] font-serif uppercase tracking-wide leading-none text-center">
           SERVICES
@@ -62,9 +60,9 @@ const ServicePage = () => {
       {/* === Second Section === */}
       <section
         id="service-second-section"
-        className="bg-[#0d0e0f] text-white flex justify-center md:justify-end items-center py-16 sm:py-24 px-4 sm:px-6 md:px-10 lg:px-20 pb-32 sm:pb-44"
+        className=" bg-white dark:bg-[#0d0e0f] text-black dark:text-white  flex justify-center md:justify-end items-center py-16 sm:py-24 px-4 sm:px-6 md:px-10 lg:px-20 pb-32 sm:pb-44"
       >
-        <p className="max-w-3xl text-base sm:text-xl md:text-2xl lg:text-3xl leading-relaxed text-left font-semibold text-gray-50 mt-6 sm:mt-10">
+        <p className="max-w-3xl text-base sm:text-xl md:text-2xl lg:text-3xl leading-relaxed text-left font-semibold text-black dark:text-gray-50  mt-6 sm:mt-10">
           I build digital interfaces with obsessive attention <br className="hidden sm:block" /> 
           to detail — transforming designs into <br className="hidden sm:block" />
           seamless, responsive experiences that feel <br className="hidden sm:block" />
@@ -79,13 +77,11 @@ const ServicePage = () => {
       <Collaboration />
 
       {/* === Clients === */}
-     
       <Clients />
 
       {/* === Testimonial === */}
-      <div className="mt-40">
-      <Testimony />
-
+      <div className="">
+        <Testimony />
       </div>
 
       {/* === Lab Section === */}

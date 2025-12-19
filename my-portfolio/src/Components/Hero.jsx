@@ -3,13 +3,19 @@ import heroBg from "../assets/sets.jpg";
 import { useNavbar } from "../Context/NavbarContext";
 
 const Hero = () => {
-  const { setNavbarStyles, menuOpen } = useNavbar();
+  const {
+    setTransparentNavbar,
+    setDarkNavbar,
+    setMidDarkNavbar,
+    menuOpen,
+  } = useNavbar();
+
   const [leftOffset, setLeftOffset] = useState("0px");
   const [rightOffset, setRightOffset] = useState("0px");
 
   useEffect(() => {
     const handleScroll = () => {
-      if (menuOpen) return; // ⛔ Skip scroll updates when menu is open
+      if (menuOpen) return; // ⛔ Skip if menu open
 
       const aboutSection = document.getElementById("about-section");
       const toolsSection = document.getElementById("tools-section");
@@ -20,12 +26,13 @@ const Hero = () => {
       const toolsTop = toolsSection.getBoundingClientRect().top;
       const toolsBottom = toolsSection.getBoundingClientRect().bottom;
 
+      // Your original scroll logic, mapped to semantic setters
       if (toolsTop <= 0 && toolsBottom > 0) {
-        setNavbarStyles({ background: "bg-[#121314] transition-colors duration-500", blur: false });
+        setMidDarkNavbar(); // midDark semantic background
       } else if (sectionTop <= 0) {
-        setNavbarStyles({ background: "bg-[#0d0e0f]", blur: false });
+        setDarkNavbar(); // full dark background
       } else {
-        setNavbarStyles({ background: "bg-transparent transition-colors duration-500", blur: false });
+        setTransparentNavbar(); // transparent
       }
     };
 
@@ -48,6 +55,7 @@ const Hero = () => {
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", alignTextWithNavbar);
 
+    // Initial calls
     alignTextWithNavbar();
     handleScroll();
 
@@ -55,7 +63,12 @@ const Hero = () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", alignTextWithNavbar);
     };
-  }, [setNavbarStyles, menuOpen]);
+  }, [
+    setTransparentNavbar,
+    setDarkNavbar,
+    setMidDarkNavbar,
+    menuOpen,
+  ]);
 
   return (
     <section className="relative h-screen w-full bg-[#0d0e0f] text-white overflow-hidden">
@@ -68,20 +81,27 @@ const Hero = () => {
       <div className="relative h-full flex flex-col justify-center z-10">
         <div
           className="absolute bottom-32 sm:bottom-36 md:bottom-40"
-          style={{ left: window.innerWidth < 640 ? "1rem" : `calc(${leftOffset} + 14px)`,
-        }}
+          style={{
+            left:
+              window.innerWidth < 640
+                ? "1rem"
+                : `calc(${leftOffset} + 14px)`,
+          }}
         >
           <h1 className="text-4xl sm:text-6xl md:text-[100px] lg:text-[120px] font-serif italic leading-tight uppercase drop-shadow-lg">
-            Multi¬ <br/>
-              disciplinary
-
+            Multi¬ <br />
+            disciplinary
           </h1>
         </div>
 
         <div
           className="absolute bottom-8 sm:bottom-10 md:bottom-12 text-right"
-          style={{ right: window.innerWidth < 640 ? "1rem" : `calc(${rightOffset} + 0px)`, 
-        }}
+          style={{
+            right:
+              window.innerWidth < 640
+                ? "1rem"
+                : `calc(${rightOffset} + 0px)`,
+          }}
         >
           <h1 className="text-4xl sm:text-5xl md:text-[100px] lg:text-[120px] font-serif uppercase drop-shadow-lg">
             DEVELOPER
@@ -93,4 +113,5 @@ const Hero = () => {
 };
 
 export default Hero;
+
 

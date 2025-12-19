@@ -20,14 +20,14 @@ const WorkMode = () => {
     {
       title: "Inquiries",
       description:
-        'Big or small, your project matters. Let’s connect and find the best way to move forward — quickly and together. If you’re passionate about your craft and driven to push boundaries, <a href="/contact" class="underline hover:text-gray-300 transition-colors">get in touch</a>.',
+        'Big or small, your project matters. Let’s connect and find the best way to move forward — quickly and together. If you’re passionate about your craft and driven to push boundaries, <a href="/contact" class="underline hover:text-gray-500 transition-colors">get in touch</a>.',
     },
   ];
 
   return (
     <div> 
-       <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-white"></div>
-    <section className="text-white md:px-[6px] px- overflow-hidden">
+       <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-black dark:border-white"></div>
+    <section className="text-black dark:text-white md:px-[6px] px- overflow-hidden">
       {/* Top line */}
 
       {/* Heading */}
@@ -42,7 +42,7 @@ const WorkMode = () => {
       {sections.map((section, index) => (
         <div key={index} className="mb-16 pb-10">
           {/* Line above each section */}
-          <div className="border-t border-white mb-2"></div>
+          <div className="border-t border-black dark:border-white mb-2"></div>
 
           {/* Content under line */}
           

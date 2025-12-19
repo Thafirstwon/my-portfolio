@@ -8,17 +8,18 @@ const ThreeColumnSection = () => {
   ];
 
   return (
-  <section className="bg-[#0d0e0f] text-white border-t border-b border-white overflow-hidden">
+  <section className="bg-white dark:bg-[#0d0e0f] text-black dark:text-white border-t border-b border-black dark:border-white overflow-hidden">
       <div className="w-full px-6 pt-6 md:pt-6 pb-16 md:pb-72">
         <div className="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory scroll-smooth scrollbar-hide">
-          {items.map((item, i) => (
+          {items.map((item, i) => ( 
             <a
               key={i}
               href={item.link}
               className="flex-shrink-0 md:flex-shrink md:flex md:flex-col items-start text-left space-y-4 group snap-center w-[97%] sm:w-[70%] md:w-auto"
             >
               {/* Title */}
-              <h2 className="text-4xl md:text-5xl font-serif uppercase hover:underline decoration-white decoration-[1px] underline-offset-8 mb-4">
+              <h2 className="text-4xl md:text-5xl font-serif uppercase hover:underline dark:decoration-white decoration-black decoration-[1px] underline-offset-8 mb-4">
+
                 {item.title}
               </h2>
 

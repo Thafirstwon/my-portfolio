@@ -35,7 +35,7 @@ const Fav = () => {
   };
 
   return (
-  <section className="bg-[#0d0e0f] text-white py-20 pb-48 px-0 overflow-hidden">
+  <section className="bg-white dark:bg-[#0d0e0f] text-black dark:text-white py-20 pb-48 px-0 overflow-hidden">
   {/* Title */}
   <motion.h2
     variants={fadeIn}
@@ -65,13 +65,13 @@ const Fav = () => {
             viewport={{ once: true }}
             transition={{ delay: i * 0.15 }}
           >
-            <p className="text-lg sm:text-xl italic text-gray-300 leading-relaxed mb-4">
+            <p className="text-lg sm:text-xl italic text-black dark:text-gray-300 leading-relaxed mb-4">
               “{quote.text}”
             </p>
             <motion.span
               onMouseEnter={() => setActiveAuthor(quote)}
               onMouseLeave={() => setActiveAuthor(null)}
-              className="block text-base sm:text-lg font-medium text-gray-400 hover:text-white transition-colors cursor-pointer"
+              className="block text-base sm:text-lg font-medium text-black dark:text-gray-400 dark:hover:text-white transition-colors cursor-pointer"
             >
               — {quote.author}
             </motion.span>

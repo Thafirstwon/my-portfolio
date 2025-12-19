@@ -34,15 +34,15 @@ const Collaboration = () => {
         transition: "padding 0.4s ease-in-out",
       }}
       className="
-        text-white overflow-hidden 
-        py-16 sm:py-20 lg:py-2 bg-[#0d0e0f]
+        overflow-hidden bg-white dark:bg-[#0d0e0f] text-black dark:text-white
+        py-16 sm:py-20 lg:py-2  
         px-6 sm:px-8 md:px-0   /* 👈 ensures balance on small screens */
       "
     >
         {/* Temporary guide for testing alignment
    <div className="absolute inset-y-0 right-3 border-l border-red-500 opacity-70 z-[9999] pointer-events-none"></div> */}
       {/* Top border line */}
-      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-white"></div>
+      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-t border-black dark:border-white"></div>
 
       {/* Heading */}
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-medium tracking-tight mt-8 mb-12 sm:mb-20 md:text-left ml-[-13px] sm:ml-[10px]">
@@ -54,7 +54,7 @@ const Collaboration = () => {
         <div key={index} className="mb-12 sm:mb-16 pb-24 collab-nudge-left">
           {/* Line above each section */}
         
-           <div className="border-t border-white mb-4 sm:mb-6"></div>
+           <div className="border-t border-black dark:border-white mb-4 sm:mb-6"></div>
 
           {/* Content */}
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 md:gap-44 collab-nudge-left">

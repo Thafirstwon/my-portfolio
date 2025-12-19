@@ -5,6 +5,7 @@ import './index.css'
 import App from './App.jsx'
 import { NavbarProvider } from './Context/NavbarContext.jsx';
 import ScrollToTop from './Components/ScrollToTop.jsx';
+import { ThemeContext, ThemeProvider } from './Context/ThemeContext.jsx';
 
 
 // Prevent automatic scroll restoration on history navigation  
@@ -15,10 +16,15 @@ if ('scrollRestoration' in history) {
 createRoot(document.getElementById('root')).render(
 <StrictMode>
    <BrowserRouter>
+   <ThemeProvider>
    <NavbarProvider>
     <ScrollToTop />
+
       <App />
+
+   
    </NavbarProvider>
+   </ThemeProvider>
     </BrowserRouter>
   </StrictMode>,
 )
