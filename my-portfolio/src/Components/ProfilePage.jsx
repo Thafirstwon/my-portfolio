@@ -100,17 +100,18 @@ const ProfilePage = () => {
         className="
          bg-white dark:bg-[#0d0e0f] text-black dark:text-white  
           flex 
-          justify-end 
+          justify-center
+          md:justify-end items-center 
           py-16 
-          md:py-24 
+          md:py-24
+          sm:px-6 md:px-10
+          lg:px-20 pb-32 sm:pb-44 
           px-4 
-          md:px-10 
-          lg:px-20
         "
       >
         <p
           className="
-            max-w-3xl 
+            max-w-[525px] lg:max-w-[991px] 
             text-base 
             sm:text-lg 
             md:text-2xl 
@@ -118,13 +119,13 @@ const ProfilePage = () => {
             leading-relaxed 
             text-left 
             font-semibold 
-            mt-8 
-            md:mt-16 
+            mt-6 
+            md:mt-10 
             text-black
             dark:text-gray-50          
           "
         >
-          I build digital experiences with an obsessive attention <br className="hidden sm:block" /> 
+          I build digital experiences with an obsessive attention
           to detail—always going beyond the brief to deliver clean, efficient, and intuitive
           software that feels effortless to use.
         </p>

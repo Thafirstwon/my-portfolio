@@ -13,7 +13,17 @@ const Studio = () => {
 
       <div className="px-4 sm:px-6 lg:px-6 py-8 md:py-9">
         {/* === Title & Description === */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 items-start mb-10 md:mb-16">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-6 mb-10 md:mb-16">
+  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif uppercase">
+    STUDIO
+  </h2>
+
+  <p className="text-base sm:text-lg md:text-xl leading-relaxed font-medium text-black dark:text-gray-300 md:max-w-[600px] lg:max-w-[750px]">
+    My home studio is where most of the work happens — calm, creative, and set up for collaboration. It’s got everything I need, and maybe too much comfort… it’s getting harder to leave.
+  </p>
+</div>
+
+        {/* <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 items-start mb-10 md:mb-16">
 
 
           <h2
@@ -25,11 +35,11 @@ const Studio = () => {
             STUDIO
           </h2>
 
-          <p className="col-span-12 md:col-span-9 text-base sm:text-lg md:text-xl leading-relaxed font-medium text-black dark:text-gray-300 mt-4 md:mt-2">
+          <p className="col-span-12 md:col-span-9 text-base sm:text-lg md:text-xl leading-relaxed font-medium text-black dark:text-gray-300 mt-4 md:mt-2 max-w-[525px] lg:max-w-[1050px]">
 
         My home studio is where most of the work happens — calm, creative, and set up for collaboration. It’s got everything I need, and maybe too much comfort… it’s getting harder to leave.
           </p>
-        </div>
+        </div> */}
 
         {/* === Top Image Grid === */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6">

@@ -10,34 +10,65 @@ const items = [
 ];
 
 const Services = () => {
-  const { menuX,  contactX } = useNavbarAlignment();
+  const { menuX, contactX } = useNavbarAlignment();
 
   const hasPositions = menuX > 0 && contactX < window.innerWidth;
 
   const sectionStyle = hasPositions
-  ? {
-    paddingLeft: `${menuX}px`,
-    paddingRight: `${window.innerWidth - contactX}px`,
-  }
-  : {};
+    ? {
+        paddingLeft: `${menuX}px`,
+        paddingRight: `${window.innerWidth - contactX}px`,
+      }
+    : {};
 
+  const scrollRef = React.useRef(null);
+
+  React.useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const handleMouseMove = (e) => {
+      const { clientX } = e;
+      const mid = window.innerWidth / 2;
+
+      // if mouse is inside container only
+      const bounds = container.getBoundingClientRect();
+      if (
+        e.clientY < bounds.top ||
+        e.clientY > bounds.bottom
+      ) {
+        return;
+      }
+
+      if (clientX > mid + 40) {
+        container.scrollBy({ left: 15, behavior: "smooth" });
+      } else if (clientX < mid - 40) {
+        container.scrollBy({ left: -15, behavior: "smooth" });
+      }
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
 
   return (
-    <div
-    className="bg-white dark:bg-[#0d0e0f] text-black dark:text-white overflow-hidden">
+    <div className="bg-white dark:bg-[#0d0e0f] text-black dark:text-white overflow-hidden">
       {/* Full width top border */}
       <div className="border-t border-black dark:border-white"></div>
 
       {/* Scrollable section with snap */}
-      <div className="overflow-x-auto scrollbar-hide snap-x snap-mandatory scroll-smooth" style={sectionStyle}
+      <div
+        ref={scrollRef}
+        className="overflow-x-scroll scrollbar-hide snap-x snap-mandatory"
+        style={sectionStyle}
       >
-        <div className="flex space-x-4 sm:space-x-2 px-2 sm:px-2 pt-6 pb-40 sm:pb-56">
+        <div className="flex space-x-6 px-4 pt-6 pb-40 sm:pb-56">
           {items.map((item, idx) => (
             <div
               key={idx}
-              className="flex flex-col flex-shrink-0 w-[70vw] sm:w-[320px] md:w-[444px] snap-center"
+              className="flex flex-col flex-shrink-0 w-[80vw] sm:w-[340px] md:w-[440px] lg:w-[520px]
+ snap-center"
             >
-              {/* Title link above image */}
               <a
                 href={item.link}
                 className="text-2xl sm:text-3xl md:text-4xl font-medium font-suisse text-left mb-4 sm:mb-6 hover:underline decoration-[1px] underline-offset-4"
@@ -45,12 +76,11 @@ const Services = () => {
                 {item.title}
               </a>
 
-              {/* Image link */}
               <a href={item.link}>
                 <img
                   src={item.img}
                   alt={item.title}
-                  className="w-full h-[480px] sm:h-[520px] md:h-[560px] object-cover"
+                 className="w-full h-[400px] sm:h-[420px] md:h-[520px] lg:h-[560px] object-cover"
                 />
               </a>
             </div>
@@ -62,4 +92,3 @@ const Services = () => {
 };
 
 export default Services;
-

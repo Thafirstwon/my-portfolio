@@ -62,10 +62,10 @@ const ServicePage = () => {
         id="service-second-section"
         className=" bg-white dark:bg-[#0d0e0f] text-black dark:text-white  flex justify-center md:justify-end items-center py-16 sm:py-24 px-4 sm:px-6 md:px-10 lg:px-20 pb-32 sm:pb-44"
       >
-        <p className="max-w-3xl text-base sm:text-xl md:text-2xl lg:text-3xl leading-relaxed text-left font-semibold text-black dark:text-gray-50  mt-6 sm:mt-10">
-          I build digital interfaces with obsessive attention <br className="hidden sm:block" /> 
-          to detail — transforming designs into <br className="hidden sm:block" />
-          seamless, responsive experiences that feel <br className="hidden sm:block" />
+        <p className="max-w-[525px] lg:max-w-[612px] text-base sm:text-xl md:text-2xl lg:text-3xl leading-relaxed text-left font-semibold text-black dark:text-gray-50  mt-6 sm:mt-10">
+          I build digital interfaces with obsessive attention 
+          to detail — transforming designs into 
+          seamless, responsive experiences that feel 
           effortless, refined, and alive in every interaction.
         </p>
       </section>

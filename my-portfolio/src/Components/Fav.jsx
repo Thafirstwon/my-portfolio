@@ -48,7 +48,7 @@ const Fav = () => {
   </motion.h2>
 
   {/* Full-width bordered container */}
-  <div className="relative  px-3 sm:px-15 max-w-[96vw] mx-auto md:px-20 lg:px-32 py-12">
+  <div className="relative  px-3 sm:px-15 max-w-[97vw] mx-auto md:px-20 lg:px-32 py-12">
     {/* Glowing border effect */}
     <div className="absolute inset-0 rounded-none border border-[#3a3b3b] lg:-mr-1 lg:-ml-1.5 md:ml-1.5 md:mr-1.5"/>
 

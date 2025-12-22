@@ -381,7 +381,7 @@ const Work = ({
               </div>
 
               <div className="w-3/4">
-                <p className="text-gray-50 mb-10 text-[27.5px] font-semibold">
+                <p className="text-black dark:text-gray-50 mb-10 text-[27.5px] font-semibold">
                   Sorry, this case study is password protected.
                 </p>
                 <form onSubmit={handleSubmitPassword} className="flex gap-4">
