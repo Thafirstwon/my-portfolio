@@ -70,7 +70,7 @@ const Design = () => {
           {/* Link above image */}
           <a
             href="/services"
-            className="mb-3 sm:mb-4 text-sm sm:text-base font-semibold underline decoration-[1px] decoration-white hover:decoration-gray-400 transition"
+            className="mb-3 sm:mb-4 text-sm sm:text-base md:text-xl font-semibold underline decoration-[1px] decoration-white hover:decoration-gray-400 transition"
           >
             Discover my services
           </a>

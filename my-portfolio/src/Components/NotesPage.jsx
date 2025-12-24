@@ -212,7 +212,7 @@ const NotesPage = () => {
                 <p className="mt-4 text-2xl sm:text-[28px] font-semibold group-hover:underline decoration-white">
                   {p.title}
                 </p>
-                <p className="text-black dark:text-gray-100 mt-1 text-base sm:text-lg">
+                <p className="text-black dark:text-gray-100 mt-1 text-sm sm:text-base md:text-xl">
                   {p.categories.join(", ")}
                 </p>
               </Link>

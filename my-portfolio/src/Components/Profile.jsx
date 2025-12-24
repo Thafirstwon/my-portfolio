@@ -20,7 +20,7 @@ const Profile = () => {
         <a
           href="/profile"
           className="
-            text-sm sm:text-base md:text-lg
+            text-sm sm:text-base md:text-xl
             underline underline-offset-4 decoration-[1px] text-white font-semibold decoration-white
             hover:decoration-gray-400 transition
            md:-mr-4"

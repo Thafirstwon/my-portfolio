@@ -9,14 +9,14 @@ const works = [
     full: true,
   },
   {
-    title: "HAVE",
+    title: "Have",
     description: "Shaping the new standards of an iconic agency",
     img: "/hhh.webp",
     link: "/work",
     full: false,
   },
   {
-    title: "ONE",
+    title: "One",
     description: "Defining the foundations of a new academy",
     img: "/on.png",
     link: "/work",
@@ -50,10 +50,10 @@ const Work = () => {
                     alt={work.title}
                     className="w-full h-[400px] sm:h-[600px] lg:h-[800px] object-cover"
                   />
-                  <p className="mt-2 font-semibold group-hover:underline decoration-[1px]">
+                  <h3 className="mt-2 text-3xl font-semibold group-hover:underline decoration-[1px]">
                     {work.title},
-                  </p>
-                  <p className="text-sm text-black  dark:text-gray-300 group-hover:underline decoration-[1px]">
+                  </h3>
+                  <p className="text-sm sm:text-base md:text-2xl text-grey-50  dark:text-grey-50 group-hover:underline decoration-[1px]">
                     {work.description}
                   </p>
                 </a>
@@ -76,10 +76,10 @@ const Work = () => {
                     alt={work.title}
                     className="w-full h-[400px] sm:h-[550px] lg:h-[700px] object-cover"
                   />
-                  <p className="mt-2 font-semibold group-hover:underline decoration-[1px]">
+                  <h3 className="mt-2 text-3xl font-semibold group-hover:underline decoration-[1px]">
                     {work.title},
-                  </p>
-                  <p className="text-sm text-black dark:text-gray-300 group-hover:underline decoration-[1px]">
+                  </h3>
+                  <p className="text-sm sm:text-base md:text-2xl text-grey-50 dark:text-gray-50 group-hover:underline decoration-[1px]">
                     {work.description}
                   </p>
                 </a>

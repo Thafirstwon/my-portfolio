@@ -94,7 +94,7 @@ const Notes = () => {
         <h2 className="text-3xl sm:text-5xl font-serif font-bold">NOTES</h2>
         <Link
           to="/notes"
-          className="text-lg underline underline-offset-4 decoration-[1px] decoration-white hover:decoration-gray-400 transition"
+          className="text-sm sm:text-base md:text-xl underline underline-offset-4 decoration-[1px] decoration-white hover:decoration-gray-400 transition"
         >
           Read all notes
         </Link>
@@ -128,7 +128,7 @@ const Notes = () => {
               <p className="mt-4 font-semibold text-1xl sm:text-[33px] group-hover:underline decoration-[1px]">
                 {note.title}
               </p>
-              <p className="text-base sm:text-[22px] text-black dark:text-gray-400 mt-1">
+              <p className="text-sm sm:text-base md:text-xl text-black dark:text-gray-100 mt-1">
                 {note.category} - {note.date}
               </p>
             </Link>

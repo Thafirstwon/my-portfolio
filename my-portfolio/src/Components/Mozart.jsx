@@ -64,7 +64,7 @@ const Mozart = () => {
 
       {/* group wrapper */}
       <motion.div
-        className="flex items-center gap-1.5 text-xl font-light -mt-1 cursor-pointer group"
+        className="flex items-center gap-1.5 text-4xl font-light -mt-1 cursor-pointer group"
         whileHover="hover"
       >
         {/* Clickable link */}
