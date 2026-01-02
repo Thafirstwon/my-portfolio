@@ -296,7 +296,7 @@ const navBarIconColor = isNavTextWhite ? "bg-white" : "bg-black";
 
             {/* Footer */}
             <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 md:p-6 flex flex-col sm:flex-row items-center justify-between text-xs sm:text-sm md:text-base gap-2 sm:gap-0">
-              <div>&copy; 2025 Jinad Stefan</div>
+              <div>&copy; 2026 Jinad Stefan</div>
               <div className="flex items-center gap-2">
                 <button
                   onClick={handleToggleTheme}

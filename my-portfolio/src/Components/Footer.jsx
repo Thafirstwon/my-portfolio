@@ -79,7 +79,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <p className="text-center md:text-right">© 2025 ThaGreat</p>
+        <p className="text-center md:text-right">© 2026 ThaGreat</p>
       </div>
     </motion.footer>
   );
