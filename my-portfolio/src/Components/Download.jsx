@@ -12,13 +12,13 @@ const downloads = [
     items: [
       {
         title: "",
-        images: "/downloads/jinad-Stefan-CV-1.jpg",
-        file: "/downloads/jinad-Stefan-CV.pdf",
+        images: "/downloads/jb.jpg",
+        file: "/downloads/jb.pdf",
       },
       {
         title: "",
-        images: "/downloads/jinad-Stefan-CV-1.jpg",
-        file: "/downloads/jinad-Stefan-CV (No Photo).pdf",
+        images: "/downloads/jb.jpg",
+        file: "/downloads/jb.pdf",
       },
     ],
   },
