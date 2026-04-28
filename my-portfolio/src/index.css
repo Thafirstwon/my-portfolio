@@ -319,23 +319,10 @@ html.light {
   --link-color: #000;
 }
 
-/* sample usage */
-/* body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
 
-nav {
-  background-color: var(--nav-bg);
-  color: var(--text-color);
+/* Hero Image Subtle Motion */
+@keyframes slowZoom {
+  0% { transform: scale(1.05); }
+  100% { transform: scale(1.1); }
 }
-
-a {
-  color: var(--link-color);
-}
-
-html,
-body {
-  transition: background-color 0.3s, color 0.3s;
-} */
 

@@ -22,7 +22,7 @@ const About = () => {
       >
         <div className="max-w-3xl">
           <p className="text-base sm:text-lg md:text-3xl font-medium font-serif mb-6 leading-relaxed">
-            With over 2 years of experience, I turn ideas into impactful, scalable software. Using tools like React, Node.js, and cloud technologies such as Firebase, AWS, and Vercel, I build secure, high-performing applications that prioritize usability and real-world impact.
+            With over 2 years of experience, I build high-performing web applications that enhance user experience and help businesses grow. My focus is on speed, usability, and developing systems that convert users into customers.
           </p>
 
           <a

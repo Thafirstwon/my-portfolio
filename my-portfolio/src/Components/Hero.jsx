@@ -1,6 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import heroBg from "../assets/sets.jpg";
 import { useNavbar } from "../Context/NavbarContext";
+import heroDesktop from "../assets/hero-desktop.webp";
+import heroMobile from "../assets/hero-mobile.webp";
+
 
 const Hero = () => {
   const {
@@ -10,10 +13,11 @@ const Hero = () => {
     menuOpen,
   } = useNavbar();
 
-  const [leftOffset, setLeftOffset] = useState("0px");
-  const [rightOffset, setRightOffset] = useState("0px");
+  const [leftOffset, setLeftOffset] = React.useState("0px");
+  const [rightOffset, setRightOffset] = React.useState("0px");
+  const [isMobile, setIsMobile] = React.useState(window.innerWidth < 640)
 
-  useEffect(() => {
+  React.useEffect(() => {
     const handleScroll = () => {
       if (menuOpen) return; // ⛔ Skip if menu open
 
@@ -26,7 +30,7 @@ const Hero = () => {
       const toolsTop = toolsSection.getBoundingClientRect().top;
       const toolsBottom = toolsSection.getBoundingClientRect().bottom;
 
-      // Your original scroll logic, mapped to semantic setters
+      //  original scroll logic, mapped to semantic setters
       if (toolsTop <= 0 && toolsBottom > 0) {
         setMidDarkNavbar(); // midDark semantic background
       } else if (sectionTop <= 0) {
@@ -70,25 +74,47 @@ const Hero = () => {
     menuOpen,
   ]);
 
+  React.useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize)
+  },[])
+
+
+
   return (
     <section className="relative h-screen w-full bg-[#0d0e0f] text-white overflow-hidden">
-      <img
-        src={heroBg}
-        alt="Hero background"
-        className="absolute inset-0 w-full h-full object-cover opacity-60"
-      />
+   <div className="absolute inset-0 scale-105 animate-[slowZoom_20s_linear_infinite]">
+  <picture>
+    <source
+      srcSet={heroMobile}
+      media="(max-width: 640px)"
+    />
+    <img
+      src={heroDesktop}
+      alt="Hero background"
+      loading="eager"
+      fetchPriority="high"
+      className="w-full h-full object-cover scale-105"
+    />
+  </picture>
 
-      <div className="relative h-full flex flex-col justify-center z-10">
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+</div>
+
+      <div className="relative h-full flex flex-col justify-center z-10 px-6 sm:px-10 md:px-16">
         <div
-          className="absolute bottom-32 sm:bottom-36 md:bottom-40"
+          className="absolute bottom-32 sm:bottom-36 md:bottom-40 mb-10"
           style={{
             left:
-              window.innerWidth < 640
-                ? "1rem"
-                : `calc(${leftOffset} + 14px)`,
+              isMobile ? "1rem" : `calc(${leftOffset} + 14px)`
           }}
         >
-          <h1 className="text-4xl sm:text-6xl md:text-[100px] lg:text-[120px] font-serif italic leading-tight uppercase drop-shadow-lg">
+          <h1 className="text-5xl sm:text-7xl md:text-[110px] font-serif italic uppercase leading-tight tracking-tight">
             Multi¬ <br />
             disciplinary
           </h1>
@@ -103,7 +129,7 @@ const Hero = () => {
                 : `calc(${rightOffset} + 0px)`,
           }}
         >
-          <h1 className="text-4xl sm:text-5xl md:text-[100px] lg:text-[120px] font-serif uppercase drop-shadow-lg">
+          <h1 className="text-5xl sm:text-7xl md:text-[110px] font-serif uppercase tracking-tight">
             DEVELOPER
           </h1>
         </div>
