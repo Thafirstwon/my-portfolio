@@ -326,3 +326,12 @@ html.light {
   100% { transform: scale(1.1); }
 }
 
+ /* Form progress button */
+@keyframes progress {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}

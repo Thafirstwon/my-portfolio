@@ -9,6 +9,7 @@ import img4 from "../assets/sets.jpg";
 import img5 from "../assets/sets.jpg";
 import { useNavbar } from "../Context/NavbarContext";
 import { useNavbarAlignment } from "./useNavbarAlignment";
+import Form from "./Form";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -149,6 +150,19 @@ const ContactPage = () => {
             />
           ))}
         </motion.div>
+
+
+          <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="mt-52 mr-[-10px] ml-[-5px]"
+        >
+          <Form />
+        </motion.div>
+
+        
 
         {/* ThreeColumnSection */}
         <motion.div

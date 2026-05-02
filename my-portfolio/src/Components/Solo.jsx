@@ -14,7 +14,7 @@ const Solo = () => {
 
   return (
     <div className="bg-white dark:bg-[#0d0e0f] text-black dark:text-white min-h-screen overflow-hidden">
-      <div className="min-h-screen px-3 sm:px-5 lg:px-5 py-20 overflow-hidden">>
+      <div className="min-h-screen px-3 sm:px-5 lg:px-5 py-20 overflow-hidden">
         <div className="mb-24">
           {/* Image Section */}
           <div className="flex justify-end">
