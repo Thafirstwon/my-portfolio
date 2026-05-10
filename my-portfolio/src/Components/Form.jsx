@@ -98,7 +98,7 @@ const Form = () => {
                   type='email' 
                   name='email'
                   required 
-                  placeholder='getintouch@gmail.com'
+                  placeholder='getintouch@email.com'
                   className="w-full border-b border-gray-500 bg-transparent py-3 text-sm sm:text-base focus:outline-none focus:border-pink-300 transition"
                   />
 
