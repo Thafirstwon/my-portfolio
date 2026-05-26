@@ -69,7 +69,7 @@ const Mozart = () => {
       >
         {/* Clickable link */}
         <a
-  href="http://mosesadegunle.com"
+  href="https://mosesadegunle.framer.website/"
   target="_blank"
   rel="noopener noreferrer"
   className="relative transition-all duration-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[1px] after:bg-black dark:after:bg-white group-hover:after:w-full after:transition-all after:duration-300"

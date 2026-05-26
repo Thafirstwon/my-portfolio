@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import workImg from "../assets/multi.jpg";
 import notesImg from "../assets/one.jpg";
 import servicesImg from "../assets/Have1.jpg";
-import profileImg from "../assets/audio.jpg";
+import Adbond from '../assets/adbon.jpeg';
 import labImg from "../assets/oltim.png";
 import { useNavbar } from "../Context/NavbarContext";
 import ContactCta from "./ContactCta";
@@ -95,6 +95,16 @@ const Work = ({
       layout: "full",
       link: "https://jinadstefan-dev.vercel.app/",
     },
+     {
+      id: "brand-c",
+      title: "Adbond",
+      description: "A proposal for optimizing and upgrading a real estate company’s website.",
+      status: "Case study",
+      img: Adbond,
+      categories: ["Business & brand strategy"],
+      layout: "full",
+      link: "https://adbond-landpage.vercel.app/",
+    },
     {
       id: "studio-a",
       title: "ONE",
@@ -112,15 +122,6 @@ const Work = ({
       status: "Case locked",
       img: servicesImg,
       categories: ["Construction", "Product design"],
-      locked: true,
-    },
-    {
-      id: "brand-c",
-      title: "BRAND C",
-      description: "Business & Brand Strategy for an international brand",
-      status: "Case locked",
-      img: profileImg,
-      categories: ["Business & brand strategy"],
       locked: true,
     },
     {

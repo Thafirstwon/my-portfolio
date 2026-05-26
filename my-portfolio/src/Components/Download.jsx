@@ -12,8 +12,8 @@ const downloads = [
     items: [
       {
         title: "",
-        images: "/downloads/jb.jpg",
-        file: "/downloads/jb.pdf",
+        images: "/downloads/appf.png",
+        file: "/downloads/jinad.pdf",
       },
       {
         title: "",
