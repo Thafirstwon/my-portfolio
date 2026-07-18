@@ -9,9 +9,9 @@ const works = [
     full: true,
   },
   {
-    title: "Have",
-    description: "Shaping the new standards of an iconic agency",
-    img: "/hhh.webp",
+    title: "NoteFlow",
+    description: "NoteFlow is a modern note-taking app designed to help you capture, organize, and revisit your ideas effortlessly.",
+    img: "/notehero.png",
     link: "/work",
     full: false,
   },

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import workImg from "../assets/multi.jpg";
 import notesImg from "../assets/one.jpg";
 import servicesImg from "../assets/Have1.jpg";
+import noteImg from '../assets/notehero.png'
 import Adbond from '../assets/adbon.jpeg';
 import labImg from "../assets/oltim.png";
 import { useNavbar } from "../Context/NavbarContext";
@@ -117,12 +118,13 @@ const Work = ({
     },
     {
       id: "studio-b",
-      title: "HAVE",
-      description: "Have Homes and Services",
-      status: "Case locked",
-      img: servicesImg,
+      title: "NOTEFLOW",
+      description: "NoteFlow is a modern note-taking app designed to help you capture, organize, and revisit your ideas effortlessly.",
+      status: "Case study",
+      img: noteImg,
       categories: ["Construction", "Product design"],
-      locked: true,
+      layout: "full",
+      link: "https://noteflow-app-nine.vercel.app/",
     },
     {
       id: "lab",
